@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sermons - Agape Family Church</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="sermons_style.css">
+</head>
+<body>
+
+<header>
+    <h1>Our Sermons</h1>
+    <p class="tagline">Catch up on the Word of God</p>
+</header>
+
+<main>
+    <section id="sermon-filter">
+        <div class="filter-group">
+            <label for="year-filter">Filter by Year:</label>
+            <select id="year-filter"><option value="all">All Years</option></select>
+        </div>
+        <div class="filter-group">
+            <label for="month-filter">Filter by Month:</label>
+            <select id="month-filter"><option value="all">All Months</option></select>
+        </div>
+        <div class="filter-group">
+            <label for="search">Search:</label>
+            <input type="text" id="search" placeholder="Enter keyword...">
+        </div>
+    </section>
+
+    <section id="latest-sermon">
+        <h2>Latest Sermon</h2>
+        <div id="latest-sermon-content"></div>
+    </section>
+
+    <section id="sermon-archive">
+        <h2>Sermon Archive</h2>
+        <nav>
+            <ul id="sermon-list" class="sermon-list"></ul>
+        </nav>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 Agape Family Church. All rights reserved.</p>
+    <a href="index.html"><i class="fas fa-home"></i> Back to Home</a>
+</footer>
+<script>
+fetch('sermons.json')
+  .then(res => res.json())
+  .then(sermons => {
+      // Sort by date descending
+      sermons.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+      // Populate Latest Sermon
+      const latest = sermons[0];
+      const latestContainer = document.getElementById('latest-sermon-content');
+      latestContainer.innerHTML = `
+          <div class="sermon-meta">
+              <div class="meta-item"><i class="fas fa-calendar-alt"></i> <span>${new Date(latest.date).toLocaleDateString()}</span></div>
+              <div class="meta-item"><i class="fas fa-user"></i> <span>${latest.speaker}</span></div>
+              <div class="meta-item"><i class="fas fa-clock"></i> <span>${latest.duration}</span></div>
+          </div>
+          <h3>${latest.title}</h3>
+          <p><strong>Key Scriptures:</strong> ${latest.scripture}</p>
+          <div class="sermon-actions">
+              <a href="sermon.html?id=${latest.id}" class="btn btn-primary"><i class="fas fa-book-open"></i> Read More</a> 
+              ${latest.video && latest.video !== "None" ? 
+  `<a href="${latest.video}" class="btn btn-primary" target="_blank">
+     <i class="fas fa-play-circle"></i> Watch Video
+   </a>` 
+  : ''  }
+      `;
+
+      // Populate Archive
+      const archiveList = document.getElementById('sermon-list');
+      const months = {};
+      sermons.forEach(sermon => {
+          const sermonDate = new Date(sermon.date);
+          const monthYear = sermonDate.toLocaleString('default', { month: 'long', year: 'numeric' });
+
+          if (!months[monthYear]) {
+              const dropdown = document.createElement('li');
+              dropdown.className = 'dropdown';
+              dropdown.dataset.monthYear = monthYear;
+              dropdown.innerHTML = `<a href="#">${monthYear} ▾</a><ul class="dropdown-content"></ul>`;
+              archiveList.appendChild(dropdown);
+              months[monthYear] = dropdown.querySelector('.dropdown-content');
+          }
+
+          const item = document.createElement('li');
+          item.innerHTML = `<a href="sermon.html?id=${sermon.id}"><span>${sermon.title}</span> <span class="sermon-date">${sermonDate.toLocaleDateString()}</span></a>`;
+          months[monthYear].appendChild(item);
+      });
+
+      // Dropdown toggle
+      document.querySelectorAll('.dropdown > a').forEach(toggle => {
+          toggle.addEventListener('click', e => {
+              e.preventDefault();
+              const dropdown = toggle.parentElement;
+              document.querySelectorAll('.dropdown').forEach(d => { if(d!==dropdown) d.classList.remove('active'); });
+              dropdown.classList.toggle('active');
+          });
+      });
+
+      // Close dropdowns on outside click
+      document.addEventListener('click', e => {
+          if(!e.target.matches('.dropdown > a')){
+              document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('active'));
+          }
+      });
+
+      // Filters
+      const yearFilter = document.getElementById('year-filter');
+      const monthFilter = document.getElementById('month-filter');
+      const searchInput = document.getElementById('search');
+
+      const years = [...new Set(sermons.map(s => new Date(s.date).getFullYear()))];
+      years.forEach(year => {
+          const opt = document.createElement('option');
+          opt.value = year;
+          opt.textContent = year;
+          yearFilter.appendChild(opt);
+      });
+
+      for(let i=1;i<=12;i++){
+          const opt = document.createElement('option');
+          opt.value = i;
+          opt.textContent = new Date(0,i-1).toLocaleString('default',{month:'long'});
+          monthFilter.appendChild(opt);
+      }
+
+      yearFilter.addEventListener('change', filterSermons);
+      monthFilter.addEventListener('change', filterSermons);
+      searchInput.addEventListener('input', filterSermons);
+
+      function filterSermons() {
+          const yearVal = yearFilter.value;
+          const monthVal = monthFilter.value;
+          const searchVal = searchInput.value.toLowerCase();
+
+          archiveList.querySelectorAll('.dropdown').forEach(dropdown => {
+              let showDropdown = false;
+              dropdown.querySelectorAll('li').forEach(li => {
+                  const link = li.querySelector('a');
+                  const title = link.querySelector('span:first-child').textContent.toLowerCase();
+                  const date = new Date(link.querySelector('.sermon-date').textContent);
+                  let match = true;
+                  if(yearVal !== 'all' && date.getFullYear() != yearVal) match = false;
+                  if(monthVal !== 'all' && date.getMonth()+1 != monthVal) match = false;
+                  if(searchVal && !title.includes(searchVal)) match = false;
+
+                  li.style.display = match ? 'block' : 'none';
+                  if(match) showDropdown = true;
+              });
+              dropdown.style.display = showDropdown ? 'block' : 'none';
+          });
+      }
+
+  })
+  .catch(err => console.error('Error loading sermons:', err));
+</script>
+</body>
+</html>
