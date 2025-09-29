@@ -45,7 +45,7 @@
             ${sermon.duration ? `<div><i class="fas fa-clock"></i> ${sermon.duration}</div>` : ''}
           </div>
           ${sermon.scripture ? `<p><strong>Key Scriptures:</strong> ${sermon.scripture}</p>` : ''}
-          ${sermon.content ? `<p>${sermon.content}</p>` : ''}`;
+          ${sermon.content ? `<div class="sermon-text">${sermon.content}</div>` : ''}
       } else {
         container.innerHTML = `<p>Sermon not found.</p>`;
       }
@@ -55,3 +55,4 @@
 
 </body>
 </html>
+
