@@ -6,8 +6,7 @@
     --text-light: #fff;
     --section-bg: #ffffff;
 }
-
-/* Center the button nicely under the tagline */
+
 header {
     display: flex;
     flex-direction: column;
@@ -48,10 +47,10 @@ header {
 }
 
 header .logo {
-    max-width: 250px;
+    max-width: 300px;  /* increase width */
     width: 100%;
     height: auto;
-    border-radius: 50%;
+    border-radius: 20%; /* less rounded (50% = oval, 0 = square) */
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
