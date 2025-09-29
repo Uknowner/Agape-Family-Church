@@ -49,7 +49,7 @@ main {
 }
 
 .sermon-text {
-    white-space: pre-line; /* keeps \n as real line breaks */
+    white-space: pre-line; /* preserves single newlines as line breaks */
     line-height: 1.6;
     margin-bottom: 1rem;
 }
@@ -85,4 +85,5 @@ footer a {
     text-decoration: none;
     margin-left: 0.5rem;
 }
+
 
