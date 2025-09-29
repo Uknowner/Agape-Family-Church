@@ -1,0 +1,27 @@
+// Get the sermon ID from the URL
+const params = new URLSearchParams(window.location.search);
+const sermonId = params.get('id');
+
+fetch('sermons.json')
+  .then(res => res.json())
+  .then(sermons => {
+    const sermon = sermons.find(s => s.id == sermonId);
+    const container = document.getElementById('single-sermon-content');
+
+    if (sermon) {
+      container.innerHTML = `
+        <h2>${sermon.title}</h2>
+        <div class="sermon-meta">
+          ${sermon.date ? `<div><i class="fas fa-calendar-alt"></i> ${new Date(sermon.date).toLocaleDateString()}</div>` : ''}
+          ${sermon.speaker ? `<div><i class="fas fa-user"></i> ${sermon.speaker}</div>` : ''}
+          ${sermon.duration ? `<div><i class="fas fa-clock"></i> ${sermon.duration}</div>` : ''}
+        </div>
+        ${sermon.scripture ? `<p><strong>Key Scriptures:</strong> ${sermon.scripture}</p>` : ''}
+        ${sermon.content ? `<p>${sermon.content}</p>` : ''}
+        ${sermon.file ? `<a href="${sermon.file}" class="btn btn-outline"><i class="fas fa-file-pdf"></i> Sermon Notes</a>` : ''}
+      `;
+    } else {
+      container.innerHTML = `<p>Sermon not found.</p>`;
+    }
+  })
+  .catch(err => console.error('Error loading sermons:', err));
