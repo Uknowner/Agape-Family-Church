@@ -46,6 +46,7 @@
           </div>
           ${sermon.scripture ? `<p><strong>Key Scriptures:</strong> ${sermon.scripture}</p>` : ''}
           ${sermon.content ? `<div class="sermon-text">${sermon.content}</div>` : ''}
+        `;
       } else {
         container.innerHTML = `<p>Sermon not found.</p>`;
       }
@@ -55,4 +56,5 @@
 
 </body>
 </html>
+
 
