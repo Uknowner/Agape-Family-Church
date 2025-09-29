@@ -48,6 +48,12 @@ main {
     margin-bottom: 1rem;
 }
 
+.sermon-text {
+    white-space: pre-line; /* keeps \n as real line breaks */
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
 .btn {
     display: inline-block;
     padding: 0.5rem 1rem;
@@ -79,3 +85,4 @@ footer a {
     text-decoration: none;
     margin-left: 0.5rem;
 }
+
