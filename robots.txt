@@ -1,2 +1,4 @@
 User-agent: *
-Disallow: /
+Allow: /
+
+Sitemap: https://uknowner.github.io/Agape-Family-Church/sitemap.xml
