@@ -46,12 +46,13 @@
 </head>
 
 <body>
-
-  <!-- Header with logo -->
+  <!-- Header with background image -->
   <header>
-    <img src="logo_1.webp" alt="Agape Family Church Logo" class="logo">
+    <div class="logo-container">
+      <p class="slogan">Demonstrating God's unconditional love to all mankind</p>
+      <a href="#about" class="btn-primary">Learn More</a>
+    </div>
   </header>
-
 
   <!-- Navigation bar -->
   <nav>
@@ -59,95 +60,137 @@
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#ministries">Ministries</a></li>
+      <!-- <li><a href="#events">Events</a></li> -->
+      <li><a href="#sermons">Sermons</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li><a href="give.html">Give</a></li>
+      <li><a href="give.html" class="btn-outline">Give</a></li>
     </ul>
   </nav>
 
-  <!-- Main content -->
   <main>
-    <!-- Upcoming events -->
-    <section id="events">
-      <h3>Events</h3>
-      <ol>
-        <li>Another church will be visiting</li>
-        <li>Super Sunday service</li>
-        <li>Youth Ministry hosting two exciting events</li>
-        <p><em>All happening on Sunday, 5 October 2025</em></p>
-      </ol>
-    </section>
-
     <!-- About Section -->
     <section id="about">
-      <h3>About the Church</h3>
-      <p>
-        Agape Family Church is a family church located at Katlehong Resource Center. 
-        Our mission is to demonstrate God's unconditional love to all mankind. 
-        The church was founded on the 10th of August 2000 by our current 
-        <strong>Pastor, Joshua Mthanyelo</strong>.
-      </p>
+      <div class="section-with-image">
+        <div class="section-image-container">
+          <img src="about-us.jpg" alt="Agape Family Church Community">
+        </div>
+        <div class="section-content">
+          <h2>About Us</h2>
+          <p>Our church aims to show the love God has for us to humanity - local and afar. We are a community dedicated to serving Christ and spreading His message of unconditional love to all people.</p>
+          <a href="about.html" class="btn-primary">Our Story</a>
+        </div>
+      </div>
     </section>
 
     <!-- Services Section -->
     <section id="services">
-      <h3>Our Services</h3>
-      <ul>
-        <li>Sunday Worship – 9:00 AM & 11:30 AM</li>
-        <li>Sunday Youth Service – 12:00 PM & 14:00 PM</li>
-        <li>Amadoda Meeting – Saturday at 7:00 AM</li>
-        <li>Izimbokodo Meeting – Thursday at 14:00</li>
-      </ul>
+      <h2>Our Services</h2>
+      <div class="service-grid">
+        <div class="service-item">
+          <h3>Sunday Worship</h3>
+          <p>9:00 AM & 11:30 AM</p>
+          <p>Join us for uplifting worship and powerful messages</p>
+        </div>
+        <div class="service-item">
+          <h3>Youth Service</h3>
+          <p>Sunday 12:00 PM & 2:00 PM</p>
+          <p>Dynamic services designed for the youth</p>
+        </div>
+        <div class="service-item">
+          <h3>Amadoda Meeting</h3>
+          <p>Saturday at 7:00 AM</p>
+          <p>Men's fellowship and discipleship</p>
+        </div>
+        <div class="service-item">
+          <h3>Izimbokodo Meeting</h3>
+          <p>Thursday at 2:00 PM</p>
+          <p>Women's ministry and support group</p>
+        </div>
+      </div>
     </section>
 
-    <!-- Google AdSense Ad 1 -->
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-9924628966951206"
-         data-ad-slot="1234567890"  <!-- replace with your Ad Unit ID -->
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
+    <!-- Events Section -->
+    <section id="events" style="display: none;">
+      <h2>Upcoming Events</h2>
+      <div class="section-image-container">
+        <img src="events.jpg" alt="Church Events">
+      </div>
+      <ul>
+        <li><strong>Super Sunday</strong> - Special guest worship service</li>
+        <li><strong>Church Visit</strong> - Another church will be visiting</li>
+        <li><strong>Youth Events</strong> - The youth ministry will host two events</li>
+      </ul>
+      <p><strong>All events happening on October 5th, 2025</strong></p>
+      <a href="#contact" class="btn-primary">Get Involved</a>
+    </section>
+
+    <!-- Sermons Section -->
+    <section id="sermons">
+      <div class="section-with-image">
+        <div class="section-content">
+          <h2>Latest Sermons</h2>
+          <p>Read the sermons by our Pastor and guest speakers from every Sunday. We at Agape Family Church believe that love is to be shown to all mankind, and in doing so we resemble Jesus.</p>
+          <a href="sermons.html" class="btn-primary">See Sermons</a>
+        </div>
+        <div class="section-image-container">
+          <img src="sermons.jpg" alt="Bible and Sermon Materials">
+        </div>
+      </div>
+    </section>
 
     <!-- Ministries Section -->
     <section id="ministries">
-      <h3>Our Ministries</h3>
-      <p>
-        At Agape Family Church, we believe in serving through love and community. 
-        Our ministries include youth programs, women’s and men’s fellowships, 
-        and outreach to our local community.
-      </p>
-      <p>
-        <a href="sermons.html" class="btn btn-outline">Read Sermons</a>
-      </p>
+      <h2>Our Ministries</h2>
+      <div class="ministries-grid">
+        <div class="ministry-item">
+          <h3>Children's Ministry</h3>
+          <p>Nurturing young hearts in faith</p>
+        </div>
+        <div class="ministry-item">
+          <h3>Youth Ministry</h3>
+          <p>Empowering the next generation</p>
+        </div>
+        <div class="ministry-item">
+          <h3>Outreach</h3>
+          <p>Serving our community</p>
+        </div>
+        <div class="ministry-item">
+          <h3>Prayer Ministry</h3>
+          <p>Interceding for our church and world</p>
+        </div>
+      </div>
     </section>
-
-    <!-- Google AdSense Ad 2 -->
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-9924628966951206"
-         data-ad-slot="9876543210"  <!-- replace with your second Ad Unit ID -->
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
 
     <!-- Contact Section -->
     <section id="contact">
-      <h3>Contact Us</h3>
-      <p><strong>Email:</strong> 
-        <a href="mailto:info@agapefamilychurch.org">info@agapefamilychurch.org</a>
-      </p>
-      <p><strong>Phone:</strong> +27 123 456 7890</p>
-      <p><strong>Address:</strong> Katlehong Resource Center, South Africa</p>
-      <p><strong>Facebook:</strong> 
-        <a href="https://www.facebook.com/AgapeFCKatlehong/" target="_blank" rel="noopener noreferrer">
-          Agape Family Church Katlehong
-        </a>
-      </p>
+      <div class="section-image-container">
+        <img src="contact-us-section.jpg" alt="Contact Agape Family Church">
+      </div>
+      <div class="section-content">
+        <h2>Contact Us</h2>
+        <p><strong>Email:</strong> 
+          <a href="mailto:info@agapefamilychurch.org">info@agapefamilychurch.org</a>
+        </p>
+        <p><strong>Address:</strong> Katlehong Resource Center, South Africa</p>
+        <p><strong>Facebook:</strong> 
+          <a href="https://www.facebook.com/AgapeFCKatlehong/" target="_blank" rel="noopener noreferrer">
+            Agape Family Church Katlehong
+          </a>
+        </p>
+        <a href="#contact" class="btn-primary">Visit Us</a>
+      </div>
     </section>
+
+    <!-- Google AdSense Ad -->
+    <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-9924628966951206"
+        data-ad-slot="YOUR_AD_SLOT"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
   </main>
 
   <!-- Footer -->
@@ -158,19 +201,67 @@
       <a href="#services">Services</a> | 
       <a href="#ministries">Ministries</a> | 
       <a href="#contact">Contact</a> | 
+      <a href="give.html">Give</a> | 
       <a href="terms.html" target="_blank">Terms & Conditions</a> | 
       <a href="privacy.html" target="_blank">Privacy Policy</a>
     </p>
-</footer>
+    <p>Demonstrating God's unconditional love to all mankind</p>
+  </footer>
 
+<script>
+// Mobile menu functionality
+const menuToggle = document.getElementById('menuToggle');
+const navMenu = document.getElementById('navMenu');
+const body = document.body;
+
+// Toggle menu
+menuToggle.addEventListener('click', function() {
+    navMenu.classList.toggle('active');
+    body.classList.toggle('menu-open');
+    
+    // Change icon based on menu state
+    const icon = this.querySelector('i');
+    if (navMenu.classList.contains('active')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+    } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+    }
+});
+
+// Close menu when clicking on a link
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        body.classList.remove('menu-open');
+        menuToggle.querySelector('i').classList.remove('fa-times');
+        menuToggle.querySelector('i').classList.add('fa-bars');
+    });
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', function(event) {
+    const isClickInsideNav = nav.contains(event.target);
+    const isClickOnToggle = menuToggle.contains(event.target);
+    
+    if (!isClickInsideNav && !isClickOnToggle && navMenu.classList.contains('active')) {
+        navMenu.classList.remove('active');
+        body.classList.remove('menu-open');
+        menuToggle.querySelector('i').classList.remove('fa-times');
+        menuToggle.querySelector('i').classList.add('fa-bars');
+    }
+});
+
+// Close menu on escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape' && navMenu.classList.contains('active')) {
+        navMenu.classList.remove('active');
+        body.classList.remove('menu-open');
+        menuToggle.querySelector('i').classList.remove('fa-times');
+        menuToggle.querySelector('i').classList.add('fa-bars');
+    }
+});
+</script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
