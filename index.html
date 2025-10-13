@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9924628966951206"
@@ -16,88 +16,50 @@
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="index_style.css">
-
   <style>
-    /* Inline styling for ads */
+    /* Optional inline styles for ads to match your theme */
     .adsbygoogle {
-      display: block;
-      margin: 40px auto;
-      border-radius: 15px;
-      overflow: hidden;
-    }
-
-    /* Location Section Styling */
-    #location {
-      text-align: center;
-      margin: 40px auto;
-      font-family: 'Poppins', sans-serif;
-    }
-    #location h3 {
-      font-size: 1.6em;
-      margin-bottom: 15px;
-    }
-    #location button {
-      margin: 8px;
-      padding: 10px 18px;
-      border: none;
-      border-radius: 8px;
-      background-color: #2e7d32;
-      color: white;
-      cursor: pointer;
-      font-size: 1em;
-      transition: background 0.3s ease;
-    }
-    #location button:hover {
-      background-color: #388e3c;
+        display: block;
+        margin: 40px auto;
+        border-radius: 15px;
+        overflow: hidden;
     }
   </style>
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA_ID"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'YOUR_GA_ID');
-  </script>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA_ID"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'YOUR_GA_ID');
+</script>
 
-  <!-- Location Script -->
-  <script defer>
-    document.addEventListener("DOMContentLoaded", () => {
-      const rideBtn = document.getElementById('ride-btn');
-      if (rideBtn) {
-        rideBtn.addEventListener('click', () => {
-          const ua = navigator.userAgent || '';
-          const androidIntent = `intent://#Intent;scheme=bolt;package=ee.mtakso.client;S.browser_fallback_url=${encodeURIComponent('https://bolt.eu/')};end`;
-          
-          if (/android/i.test(ua)) {
-            window.location = androidIntent;
-          } else if (/iphone|ipad|ipod/i.test(ua)) {
-            window.location = 'https://apps.apple.com/app/id675033630';
-          } else {
-            window.open('https://bolt.eu/', '_blank', 'noopener,noreferrer');
-          }
-        });
-      }
-    });
-  </script>
-
+<script>
+  // Simple bot detection
+  const isBot = /bot|crawl|spider|curl|wget|python/i.test(navigator.userAgent);
+  if(isBot){
+    document.body.innerHTML = "<h1>Access Denied</h1>";
+    window.stop();
+  }
+</script>
 </head>
 
 <body>
-  <!-- Header -->
+  <!-- Header with background image -->
   <header>
-    <div class="logo-container">
+    <div class="logo-container" style="display: none;">
       <p class="slogan">Demonstrating God's unconditional love to all mankind</p>
     </div>
   </header>
 
-  <!-- Navigation -->
+  <!-- Navigation bar -->
   <nav>
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#ministries">Ministries</a></li>
+      <!-- <li><a href="#events">Events</a></li> -->
       <li><a href="#sermons">Sermons</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="give.html" class="btn-outline">Give</a></li>
@@ -105,11 +67,12 @@
   </nav>
 
   <main>
-    <br>
-    <br>
     <!-- About Section -->
     <section id="about">
       <div class="section-with-image">
+        <div class="section-image-container">
+        <!-- <img src="about-us.jpg" alt="Agape Family Church Community"> -->
+        </div>
         <div class="section-content">
           <h2>About Us</h2>
           <p>Our church aims to show the love God has for us to humanity - local and afar. We are a community dedicated to serving Christ and spreading His message of unconditional love to all people.</p>
@@ -125,24 +88,39 @@
         <div class="service-item">
           <h3>Sunday Worship</h3>
           <p>8:00 AM & 09:00 AM</p>
-          <p>Join us for uplifting worship and powerful messages with Pastor Joshua Mthanyelo or guest speakers.</p>
+          <p>Join us for uplifting worship and powerful messages where Pastor Joshua Mthanyelo or guest speaker delivers a powerful sermon</p>
         </div>
         <div class="service-item">
           <h3>Youth Service</h3>
           <p>Sunday 12:00 PM</p>
-          <p>Dynamic services designed for the youth — focusing on growing in God and growing the church.</p>
+          <p>Dynamic services designed for the youth where we focus on growing in God and growing the church</p>
         </div>
         <div class="service-item">
           <h3>Amadoda Meeting</h3>
           <p>Saturday at 7:00 AM</p>
-          <p>Men's fellowship and discipleship — tackling life's problems together in Christ.</p>
+          <p>Men's fellowship and discipleship. Here men sit and tackle life's problems together in Christ.</p>
         </div>
         <div class="service-item">
           <h3>Izimbokodo Meeting</h3>
           <p>Thursday at 2:00 PM</p>
-          <p>Women's ministry and support group for empowerment and prayer.</p>
+          <p>Women's ministry and support group</p>
         </div>
       </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" style="display: none;">
+      <h2>Upcoming Events</h2>
+      <div class="section-image-container">
+        <img src="events.jpg" alt="Church Events">
+      </div>
+      <ul>
+        <li><strong>Super Sunday</strong> - Special guest worship service</li>
+        <li><strong>Church Visit</strong> - Another church will be visiting</li>
+        <li><strong>Youth Events</strong> - The youth ministry will host two events</li>
+      </ul>
+      <p><strong>All events happening on October 5th, 2025</strong></p>
+      <a href="#contact" class="btn-primary">Get Involved</a>
     </section>
 
     <!-- Sermons Section -->
@@ -150,8 +128,11 @@
       <div class="section-with-image">
         <div class="section-content">
           <h2>Latest Sermons</h2>
-          <p>Read the sermons by our Pastor and guest speakers every Sunday. We believe that love must be shown to all mankind — as Jesus did.</p>
+          <p>Read the sermons by our Pastor and guest speakers from every Sunday. We at Agape Family Church believe that love is to be shown to all mankind, and in doing so we resemble Jesus.</p>
           <a href="sermons.html" class="btn-primary">See Sermons</a>
+        </div>
+        <div class="section-image-container">
+          <img src="sermons.jpg" alt="Bible and Sermon Materials">
         </div>
       </div>
     </section>
@@ -162,11 +143,11 @@
       <div class="ministries-grid">
         <div class="ministry-item">
           <h3>Children's Ministry</h3>
-          <p>Nurturing young hearts in faith — your children are cared for by devoted parents and youth ministry members.</p>
+          <p>Nurturing young hearts in faith. Your children are cared for by our devoted parents and volunteering youth ministry members....</p>
         </div>
         <div class="ministry-item">
           <h3>Youth Ministry</h3>
-          <p>Empowering the next generation. Join us after main service to bond, grow in Christ, and lead by example.</p>
+          <p>Empowering the next generation. Join us after main service as the youth joins to bond and grow in Chrsit.</p>
         </div>
       </div>
     </section>
@@ -178,28 +159,76 @@
       </div>
       <div class="section-content">
         <h2>Contact Us</h2>
-        <p><strong>Email:</strong> <a href="mailto:info@agapefamilychurch.org">info@agapefamilychurch.org</a></p>
-        <p><strong>Address:</strong> Katlehong Resource Centre, South Africa</p>
+        <p><strong>Email:</strong> 
+          <a href="mailto:info@agapefamilychurch.org">info@agapefamilychurch.org</a>
+        </p>
+        <p><strong>Address:</strong> Katlehong Resource Center, South Africa</p>
         <p><strong>Facebook:</strong> 
           <a href="https://www.facebook.com/AgapeFCKatlehong/" target="_blank" rel="noopener noreferrer">
             Agape Family Church Katlehong
           </a>
         </p>
       </div>
+      <!-- Location buttons for Katlehong Resource Centre -->
+<section id="location">
+  <h3>Find Us 📍</h3>
 
-      <!-- Location Section -->
-      <section id="location" role="group" aria-label="Map and ride options">
-        <h3>Find Us 📍</h3>
+  <!-- Google Maps Directions -->
+  <button onclick="window.open('https://www.google.com/maps/dir/?api=1&destination=-26.3594361723,28.1616006601&travelmode=driving', '_blank')">
+    Directions (Google Maps)
+  </button>
 
-        <button onclick="window.open('https://www.google.com/maps/dir/?api=1&destination=-26.3594361723,28.1616006601&travelmode=driving', '_blank', 'noopener,noreferrer')">
-          Directions (Google Maps)
-        </button>
+  <!-- Android Geo Link -->
+  <button onclick="window.location='geo:-26.3594361723,28.1616006601?q=-26.3594361723,28.1616006601(Katlehong%20Resource%20Centre)'">
+    Open in Device Maps
+  </button>
 
-        <button onclick="window.location='geo:-26.3594361723,28.1616006601?q=-26.3594361723,28.1616006601(Katlehong%20Resource%20Centre)'">
-          Open in Device Maps
-        </button>
-        
-      </section>
+</section>
+
+<script>
+document.getElementById('ride-btn').addEventListener('click', () => {
+  const ua = navigator.userAgent || '';
+  const androidIntent = `intent://#Intent;scheme=bolt;package=ee.mtakso.client;S.browser_fallback_url=${encodeURIComponent('https://bolt.eu/')} ;end`;
+  
+  if (/android/i.test(ua)) {
+    // Android: try open Bolt app
+    window.location = androidIntent;
+  } else if (/iphone|ipad|ipod/i.test(ua)) {
+    // iOS: open Bolt App Store page
+    window.location = 'https://apps.apple.com/app/id675033630';
+  } else {
+    // Desktop fallback: open Bolt website
+    window.open('https://bolt.eu/', '_blank');
+  }
+});
+</script>
+
+<style>
+#location {
+  text-align: center;
+  margin: 30px auto;
+  font-family: 'Poppins', sans-serif;
+}
+#location h3 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+#location button {
+  margin: 8px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  background-color: #2e7d32;
+  color: white;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background 0.3s ease;
+}
+#location button:hover {
+  background-color: #388e3c;
+}
+</style>
+
     </section>
 
     <!-- Google AdSense Ad -->
@@ -228,8 +257,62 @@
     </p>
     <p>Demonstrating God's unconditional love to all mankind</p>
   </footer>
+
+<script>
+// Mobile menu functionality
+const menuToggle = document.getElementById('menuToggle');
+const navMenu = document.getElementById('navMenu');
+const body = document.body;
+
+// Toggle menu
+menuToggle.addEventListener('click', function() {
+    navMenu.classList.toggle('active');
+    body.classList.toggle('menu-open');
+    
+    // Change icon based on menu state
+    const icon = this.querySelector('i');
+    if (navMenu.classList.contains('active')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+    } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+    }
+});
+
+// Close menu when clicking on a link
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        body.classList.remove('menu-open');
+        menuToggle.querySelector('i').classList.remove('fa-times');
+        menuToggle.querySelector('i').classList.add('fa-bars');
+    });
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', function(event) {
+    const isClickInsideNav = nav.contains(event.target);
+    const isClickOnToggle = menuToggle.contains(event.target);
+    
+    if (!isClickInsideNav && !isClickOnToggle && navMenu.classList.contains('active')) {
+        navMenu.classList.remove('active');
+        body.classList.remove('menu-open');
+        menuToggle.querySelector('i').classList.remove('fa-times');
+        menuToggle.querySelector('i').classList.add('fa-bars');
+    }
+});
+
+// Close menu on escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape' && navMenu.classList.contains('active')) {
+        navMenu.classList.remove('active');
+        body.classList.remove('menu-open');
+        menuToggle.querySelector('i').classList.remove('fa-times');
+        menuToggle.querySelector('i').classList.add('fa-bars');
+    }
+});
+</script>
 </body>
+
 </html>
-
-
-
