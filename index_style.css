@@ -44,7 +44,7 @@ header h1 {
     font-style: italic;
     font-weight: 300;
     position: relative;
-    top: 380px;
+    top: 400px;
     left: 0%;
 }
 
@@ -457,4 +457,5 @@ html {
 .adsbygoogle {
     margin: 30px 0;
     border-radius: 15px; /* optional rounded corners to match your buttons */
+
 }
