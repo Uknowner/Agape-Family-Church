@@ -16,7 +16,7 @@ body {
 /* Header */
 header {
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-                url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') no-repeat center center;
+                url("sermons.jpg") no-repeat center center;
     background-size: cover;
     color: white;
     text-align: center;
@@ -82,9 +82,19 @@ h3 {
     color: #34495e;
 }
 
+/* Sermon Actions - Button Container */
+.sermon-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+    flex-wrap: wrap; /* Allows buttons to wrap on small screens */
+}
+
 /* Buttons */
 .btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     padding: 12px 30px;
     border-radius: 50px;
     text-decoration: none;
@@ -94,7 +104,9 @@ h3 {
     letter-spacing: 1px;
     font-size: 0.9rem;
     border: 2px solid transparent;
-    margin-right: 10px;
+    text-align: center;
+    justify-content: center;
+    min-height: 44px; /* Better touch targets on mobile */
 }
 
 .btn-primary {
@@ -232,4 +244,46 @@ footer a:hover {
     header .tagline { font-size: 1rem; }
     main { padding: 30px 15px; }
     .sermon-meta { flex-direction: column; gap: 10px; }
+    
+    /* Mobile-specific button styles */
+    .sermon-actions {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 12px;
+        width: 100%;
+    }
+    
+    .btn {
+        width: 100%; /* Full width buttons on mobile */
+        padding: 14px 20px; /* Larger padding for touch */
+        font-size: 1rem; /* Slightly larger text */
+    }
+}
+
+@media (max-width: 480px) {
+    .sermon-actions {
+        gap: 10px;
+    }
+    
+    .btn {
+        padding: 16px 20px; /* Even larger for very small screens */
+        min-height: 48px;
+    }
+    
+    .btn i {
+        font-size: 1.1rem; /* Slightly larger icons */
+    }
+}
+
+/* Ensure the buttons have proper spacing from other content */
+.sermon-meta + h3 {
+    margin-top: 20px;
+}
+
+h3 + p {
+    margin-bottom: 25px;
+}
+
+/* Optional: Add some breathing room around the latest sermon content */
+#latest-sermon-content {
+    padding: 20px;
 }

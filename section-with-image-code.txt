@@ -1,0 +1,143 @@
+Here are all the image layout options for sections:
+
+## **1. Full-Width Top Image**
+```html
+<section>
+  <div class="section-image-container">
+    <img src="image.jpg" alt="Description">
+  </div>
+  <div class="section-content">
+    <h3>Content Title</h3>
+    <p>Your content here...</p>
+  </div>
+</section>
+```
+**Use case:** Hero-style images at the top of sections
+
+## **2. Side-by-Side Layout**
+```html
+<section class="section-with-image">
+  <div class="section-image-container">
+    <img src="image.jpg" alt="Description">
+  </div>
+  <div class="section-content">
+    <h3>Content Title</h3>
+    <p>Your content here...</p>
+  </div>
+</section>
+```
+**Use case:** Equal balance between image and text content
+
+## **3. Background Image Section**
+```html
+<section class="section-with-bg-image" style="--bg-image: url('image.jpg')">
+  <div class="section-content">
+    <h3>Content Title</h3>
+    <p>Your content here...</p>
+  </div>
+</section>
+```
+**Use case:** Text overlaying a full background image
+
+## **4. Centered Inline Image**
+```html
+<section>
+  <div class="section-content">
+    <h3>Content Title</h3>
+    <p>Some introductory text...</p>
+    <img src="image.jpg" alt="Description" class="inline-image">
+    <p>More content after the image...</p>
+  </div>
+</section>
+```
+**Use case:** Images embedded within text content
+
+## **5. Floating Left Image**
+```html
+<section>
+  <div class="section-content">
+    <img src="image.jpg" alt="Description" class="float-left">
+    <h3>Content Title</h3>
+    <p>Text that wraps around the image on the right side...</p>
+  </div>
+</section>
+```
+**Use case:** Text wrapping around left-aligned images
+
+## **6. Floating Right Image**
+```html
+<section>
+  <div class="section-content">
+    <img src="image.jpg" alt="Description" class="float-right">
+    <h3>Content Title</h3>
+    <p>Text that wraps around the image on the left side...</p>
+  </div>
+</section>
+```
+**Use case:** Text wrapping around right-aligned images
+
+## **7. Image Gallery Grid**
+```html
+<section>
+  <h3>Photo Gallery</h3>
+  <div class="image-gallery">
+    <img src="img1.jpg" alt="Image 1">
+    <img src="img2.jpg" alt="Image 2">
+    <img src="img3.jpg" alt="Image 3">
+  </div>
+</section>
+```
+**Use case:** Multiple images in a grid layout
+
+## **8. Image with Caption**
+```html
+<section>
+  <div class="section-content">
+    <figure class="image-with-caption">
+      <img src="image.jpg" alt="Description">
+      <figcaption>This is a caption for the image</figcaption>
+    </figure>
+    <p>Regular content...</p>
+  </div>
+</section>
+```
+**Use case:** Images that need descriptive captions
+
+## **9. Card Layout with Image**
+```html
+<section class="card-container">
+  <div class="image-card">
+    <img src="image.jpg" alt="Description">
+    <div class="card-content">
+      <h4>Card Title</h4>
+      <p>Card description text...</p>
+    </div>
+  </div>
+</section>
+```
+**Use case:** Image cards for services, team members, etc.
+
+## **10. Parallax Background**
+```html
+<section class="parallax-section" style="background-image: url('image.jpg')">
+  <div class="parallax-content">
+    <h3>Immersive Section</h3>
+    <p>Content with parallax scrolling effect</p>
+  </div>
+</section>
+```
+**Use case:** Modern, engaging visual sections
+
+## **Quick Reference - When to Use Each:**
+
+- **Full-width top**: When image is the main focus
+- **Side-by-side**: Balanced content and visual
+- **Background image**: For dramatic, text-over-image sections
+- **Inline centered**: For images that are part of the content flow
+- **Floating**: For magazine-style layouts
+- **Gallery**: Multiple related images
+- **With caption**: When images need explanation
+- **Card layout**: For featured items or services
+- **Parallax**: For modern, engaging hero sections
+
+**Most commonly used:** Full-width top, Side-by-side, and Background image layouts are the most versatile for church websites.
