@@ -150,28 +150,61 @@ nav a:hover {
 
 /* Mobile Styles */
 @media (max-width: 768px) {
+    header {
+        min-height: 60vh;
+        padding: 40px 20px;
+        background-size: cover;
+    }
+
+    .slogan {
+        top: 150px;
+        font-size: 1.2rem;
+    }
+    
     nav {
         justify-content: flex-end;
         padding: 0;
         height: 60px;
+        min-height: 60px;
         position: relative;
     }
+    
+    /* Show hamburger button on mobile */
+    .menu-toggle {
+        display: flex;
+        top: 5px; /* REDUCED from 10px */
+    }
 
+    /* Hide the regular navigation items on mobile */
     nav ul {
         display: none;
         position: fixed;
-        top: 0; /* Start menu at very top */
+        top: 60px;
         left: 0;
         right: 0;
         bottom: 0;
         background: var(--primary-blue);
         flex-direction: column;
-        padding: 0; /* Remove extra padding */
-        margin: 0; /* Remove extra margin */
+        padding: 10px 0;
         z-index: 1500;
         overflow-y: auto;
+        height: calc(100vh - 60px);
     }
 
+    /* Hamburger to X animation */
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    /* Mobile menu when active */
     nav ul.active {
         display: flex;
     }
@@ -183,13 +216,12 @@ nav a:hover {
     }
 
     nav a {
-        padding: 20px; /* Increase for easier tap */
+        padding: 12px 20px;
         border-radius: 0;
         border-bottom: 1px solid rgba(255,255,255,0.1);
-        font-size: 1.2rem; /* Slightly bigger for phones */
-        width: 100%; /* Full width */
-        display: block;
-        box-sizing: border-box;
+        font-size: 1rem;
+        width: 100%;
+        color: white !important;
     }
 
     nav a:last-child {
@@ -200,8 +232,14 @@ nav a:hover {
         background: rgba(255, 215, 0, 0.1);
     }
 
+    /* Prevent body scroll when menu is open */
     body.menu-open {
         overflow: hidden;
+    }
+
+    /* Desktop navigation should be hidden on mobile */
+    nav ul:not(.active) {
+        display: none;
     }
 }
 
@@ -473,4 +511,5 @@ html {
     margin: 30px 0;
     border-radius: 15px;
 }
+
 
