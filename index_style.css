@@ -102,29 +102,16 @@ nav li {
     margin: 0 15px;
 }
 
-/* Mobile menu when active */
-nav ul.active {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 60px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--primary-blue);
-    flex-direction: column;
-    padding: 10px 0; /* REDUCED from 20px 0 */
-    z-index: 1500;
-    overflow-y: auto;
-    height: calc(100vh - 60px);
-}
-
 nav a {
-    padding: 12px 20px; /* REDUCED from 18px 20px */
-    border-radius: 0;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    font-size: 1rem; /* REDUCED from 1.1rem */
-    width: 100%;
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 700;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    display: block;
 }
 
 nav a:hover {
@@ -197,7 +184,7 @@ nav a:hover {
         bottom: 0;
         background: var(--primary-blue);
         flex-direction: column;
-        padding: 20px 0;
+        padding: 10px 0; /* REDUCED padding */
         z-index: 1500;
         overflow-y: auto;
         height: calc(100vh - 60px);
@@ -228,10 +215,10 @@ nav a:hover {
     }
 
     nav a {
-        padding: 18px 20px;
+        padding: 12px 20px; /* REDUCED padding */
         border-radius: 0;
         border-bottom: 1px solid rgba(255,255,255,0.1);
-        font-size: 1.1rem;
+        font-size: 1rem; /* REDUCED font size */
         width: 100%;
     }
 
@@ -517,6 +504,3 @@ html {
     margin: 30px 0;
     border-radius: 15px;
 }
-
-
-
