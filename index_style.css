@@ -400,7 +400,6 @@ section img {
     align-items: center;
 }
 
-/* Ministries Grid */
 .section-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -450,21 +449,6 @@ html {
 .adsbygoogle {
     margin: 30px 0;
     border-radius: 15px;
-}
-
-/* Service Grid */
-.service-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    margin-top: 30px;
-}
-
-.service-item {
-    background: #f8f9fa;
-    padding: 30px;
-    border-radius: 10px;
-    border-left: 4px solid var(--accent-gold);
 }
 
 /* Location Styles */
