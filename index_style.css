@@ -415,3 +415,44 @@ footer a {
     color: white;
     border-left: 5px solid var(--accent-gold);
 }
+
+.image-with-text {
+  position: relative;
+  display: inline-block; /* or block to fill width */
+  width: 100%;           /* adjust as needed */
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.image-with-text img {
+  display: block;
+  width: 100%;
+  height: auto;          /* adjust height if needed */
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.image-with-text img:hover {
+  transform: scale(1.05); /* optional hover zoom */
+}
+
+/* Text overlay */
+.image-with-text .overlay-text {
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%); /* center text */
+  color: white;
+  text-align: center;
+  padding: 20px;
+  z-index: 2;
+}
+
+/* Optional: dark overlay between image and text for readability */
+.image-with-text::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4); /* adjust opacity */
+  z-index: 1;
+}
