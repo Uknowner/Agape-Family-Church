@@ -149,7 +149,7 @@ a {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .btn-group .btn {
         width: 100%;
         max-width: 300px;
@@ -211,7 +211,7 @@ nav a:hover {
     justify-content: center;
     width: 40px;
     height: 40px;
-    position: sticky;
+    position: absolute;
     right: 20px;
     top: 10px;
     z-index: 2000;
@@ -265,7 +265,7 @@ nav a:hover {
     .menu-toggle {
         display: flex;
         position: absolute;
-        top: 15px;
+        top: 10px;
         right: 15px;
         background: rgba(44, 62, 80, 0.9);
         border-radius: 5px;
@@ -409,7 +409,7 @@ section img {
         grid-template-columns: 1fr;
         gap: 20px;
     }
-    
+
     .section-image-container img {
         height: 250px;
     }
