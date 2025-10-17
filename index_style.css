@@ -326,7 +326,7 @@ nav a:hover {
         font-size: 1rem;
     }
 
-    .service-grid, .ministries-grid {
+    .section-grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
@@ -441,7 +441,7 @@ html {
     border-radius: 15px;
 }
 
-/* Service Grid */
+/* Unified Section Grid Styles */
 .section-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -454,6 +454,25 @@ html {
     padding: 30px;
     border-radius: 10px;
     border-left: 4px solid var(--accent-gold);
+    transition: all 0.3s ease;
+}
+
+.section-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(255,215,0,0.2);
+}
+
+.content {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 10px;
+    border-left: 4px solid var(--accent-gold);
+    transition: all 0.3s ease;
+}
+
+.content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(255,215,0,0.2);
 }
 
 /* Location Styles */
@@ -482,8 +501,7 @@ html {
 }
 
 @media (max-width: 768px) {
-    .service-grid,
-    .ministries-grid {
+    .section-grid {
         grid-template-columns: 1fr;
     }
 }
