@@ -400,8 +400,19 @@ section img {
     align-items: center;
 }
 
+/* Ministries Grid */
+.section-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 30px;
+}
+
 .section-content {
-    padding: 20px 0;
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 10px;
+    border-left: 4px solid var(--primary-blue);
 }
 
 @media (max-width: 768px) {
@@ -454,21 +465,6 @@ html {
     padding: 30px;
     border-radius: 10px;
     border-left: 4px solid var(--accent-gold);
-}
-
-/* Ministries Grid */
-.ministries-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    margin-top: 30px;
-}
-
-.ministry-content {
-    background: #f8f9fa;
-    padding: 30px;
-    border-radius: 10px;
-    border-left: 4px solid var(--primary-blue);
 }
 
 /* Location Styles */
