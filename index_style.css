@@ -262,6 +262,9 @@ nav a:hover {
 
     .menu-toggle {
         display: flex;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
     }
 
     /* Hide the regular navigation items on mobile */
