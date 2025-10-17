@@ -55,6 +55,59 @@ main {
     gap: 40px;
 }
 
+.sermon-container span {
+    white-space: pre-line !important;
+    display: block;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.sermon-container p {
+    margin-bottom: 1.5rem;
+}
+
+/* Media sections styling */
+.media-section {
+    margin: 30px 0;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border-left: 4px solid #ffd700;
+}
+
+.media-section h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.audio-container {
+    margin: 15px 0;
+}
+
+.audio-container audio {
+    border-radius: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
 /* Sections */
 section {
     background: white;
