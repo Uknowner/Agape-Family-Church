@@ -54,6 +54,11 @@
             ${sermon.speaker ? `<div><i class="fas fa-user"></i> ${sermon.speaker}</div>` : ''}
             ${sermon.duration ? `<div><i class="fas fa-clock"></i> ${sermon.duration}</div>` : ''}
           </div>
+
+          ${sermon.scripture ? `<p><strong>Key Scriptures:</strong> ${sermon.scripture}</p>` : ''}
+          <br>
+          ${sermon.content ? `<p><span style="white-space: pre-line;">${sermon.content}</span></p>` : ''}
+        `;
           
           <!-- Video Section - Only shows if video exists and is not "None" -->
           ${sermon.video && sermon.video !== "None" ? `
@@ -77,11 +82,6 @@
               </div>
             </div>
           ` : ''}
-          
-          ${sermon.scripture ? `<p><strong>Key Scriptures:</strong> ${sermon.scripture}</p>` : ''}
-          <br>
-          ${sermon.content ? `<p><span style="white-space: pre-line;">${sermon.content}</span></p>` : ''}
-        `;
       } else {
         container.innerHTML = `<p>Sermon not found. Available sermons: ${sermons.map(s => s.id).join(', ')}</p>`;
       }
