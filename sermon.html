@@ -24,7 +24,7 @@
     <a href="sermons.html"><i class="fas fa-arrow-left"></i> Back to Sermons</a>
 </footer>
 
-<script>
+<<script>
   // Get the sermon ID from the URL
   const params = new URLSearchParams(window.location.search);
   const sermonId = params.get('id');
@@ -55,20 +55,20 @@
             ${sermon.duration ? `<div><i class="fas fa-clock"></i> ${sermon.duration}</div>` : ''}
           </div>
           
-          <!-- Video Section -->
+          <!-- Video Section - Only shows if video exists and is not "None" -->
           ${sermon.video && sermon.video !== "None" ? `
             <div class="media-section">
-              <h3><i class="fas fa-video"></i> Watch Sermon</h3>
+              <h3><i class="fas fa-video"></i> Video</h3>
               <div class="video-container">
                 <iframe src="${sermon.video}" frameborder="0" allowfullscreen></iframe>
               </div>
             </div>
           ` : ''}
           
-          <!-- Audio Section -->
+          <!-- Audio Section - Only shows if audio exists and is not "None" -->
           ${sermon.audio && sermon.audio !== "None" ? `
             <div class="media-section">
-              <h3><i class="fas fa-volume-up"></i> Listen to Sermon</h3>
+              <h3><i class="fas fa-volume-up"></i> Audio</h3>
               <div class="audio-container">
                 <audio controls style="width: 100%;">
                   <source src="${sermon.audio}" type="audio/mpeg">
@@ -81,7 +81,7 @@
           ${sermon.scripture ? `<p><strong>Key Scriptures:</strong> ${sermon.scripture}</p>` : ''}
           <br>
           ${sermon.content ? `<p><span style="white-space: pre-line;">${sermon.content}</span></p>` : ''}
-        `; // ← This backtick was missing!
+        `;
       } else {
         container.innerHTML = `<p>Sermon not found. Available sermons: ${sermons.map(s => s.id).join(', ')}</p>`;
       }
