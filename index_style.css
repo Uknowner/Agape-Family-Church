@@ -326,9 +326,19 @@ nav a:hover {
         font-size: 1rem;
     }
 
+    /* ADD THIS - Make section grid stack vertically on mobile */
     .section-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+
+    .section-with-image {
         grid-template-columns: 1fr;
         gap: 20px;
+    }
+
+    .section-image-container img {
+        height: 250px;
     }
 }
 
