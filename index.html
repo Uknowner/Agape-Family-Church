@@ -1,4 +1,78 @@
-<main>
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+  <meta charset="UTF-8">  
+  <title>Agape Family Church</title>  
+  <meta name="description" content="Agape Family Church - Demonstrating God's unconditional love to all mankind.">  
+  <meta name="keywords" content="Church, Agape, Jesus, God, Christ, Christian, Agape Family Church, Agape Family Church Katlehong">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  
+  <!-- Google Fonts -->  
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">  
+  
+  <!-- Google AdSense -->  
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9924628966951206"  
+      crossorigin="anonymous"></script>  
+  
+  <!-- Stylesheet -->  
+  <link rel="stylesheet" href="index_style.css">  
+  <style>  
+    /* Optional inline styles for ads to match your theme */  
+    .adsbygoogle {  
+        display: block;  
+        margin: 40px auto;  
+        border-radius: 15px;  
+        overflow: hidden;  
+    }  
+  </style>  
+  
+<!-- Google Analytics -->  
+<script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA_ID"></script>  
+<script>  
+  window.dataLayer = window.dataLayer || [];  
+  function gtag(){dataLayer.push(arguments);}  
+  gtag('js', new Date());  
+  gtag('config', 'YOUR_GA_ID');  
+</script>  
+  
+<script>  
+  // Simple bot detection  
+  const isBot = /bot|crawl|spider|curl|wget|python/i.test(navigator.userAgent);  
+  if(isBot){  
+    document.body.innerHTML = "<h1>Access Denied</h1>";  
+    window.stop();  
+  }  
+</script>  
+</head>  
+  
+<body>  
+  <!-- Header with background image -->  
+  <header>  
+    <div class="logo-container" style="display: none;">  
+      <p class="slogan">Demonstrating God's unconditional love to all mankind</p>  
+    </div>  
+  </header>  
+  
+  <!-- Navigation bar -->  
+<nav>  
+  <button class="menu-toggle" id="menuToggle">  
+    <span></span>  
+    <span></span>  
+    <span></span>  
+  </button>  
+  
+  <ul id="navMenu">  
+      <li><a href="#about">About</a></li>  
+      <li><a href="#services">Services</a></li>  
+      <li><a href="#ministries">Ministries</a></li>  
+      <li><a href="#sermons">Sermons</a></li>  
+      <li><a href="#contact">Contact</a></li>  
+      <li><a href="give.html" class="btn-outline">Give</a></li>  
+  </ul>  
+</nav>  
+  
+  
+  <main>
   <!-- Hero / Welcome Section with background image -->
   <section class="section-bg-image bg-overlay-medium" style="--section-bg-image: url('about-us.jpg');">
     <div class="section-content">
@@ -119,3 +193,63 @@
     </section>
   </section>
 </main>
+  
+  <!-- Footer -->  
+  <footer>  
+    <p>&copy; 2025 Agape Family Church. All rights reserved.</p>  
+    <p>  
+      <a href="terms.html" target="_blank">Terms & Conditions</a>  |    
+      <a href="privacy.html">Privacy Policy</a>  
+    </p>  
+    <h3>Demonstrating God's unconditional love to all mankind</h3>  
+  </footer>  
+  
+<script>  
+    // Mobile menu functionality - SIMPLE FIXED VERSION  
+    const menuToggle = document.getElementById('menuToggle');  
+    const navMenu = document.getElementById('navMenu');  
+    const body = document.body;  
+  
+    menuToggle.addEventListener('click', function() {  
+        const isActive = navMenu.classList.toggle('active');  
+        body.classList.toggle('menu-open');  
+        this.classList.toggle('active');  
+  
+        // Update aria-label for accessibility  
+        this.setAttribute('aria-label', isActive ? 'Close menu' : 'Open menu');  
+    });  
+  
+    // Close menu when clicking on a link  
+    document.querySelectorAll('nav a').forEach(link => {  
+        link.addEventListener('click', () => {  
+            navMenu.classList.remove('active');  
+            body.classList.remove('menu-open');  
+            menuToggle.classList.remove('active');  
+            menuToggle.setAttribute('aria-label', 'Open menu');  
+        });  
+    });  
+  
+    // Close menu on Escape key  
+    document.addEventListener('keydown', function(event) {  
+        if (event.key === 'Escape' && navMenu.classList.contains('active')) {  
+            navMenu.classList.remove('active');  
+            body.classList.remove('menu-open');  
+            menuToggle.classList.remove('active');  
+            menuToggle.setAttribute('aria-label', 'Open menu');  
+        }  
+    });  
+  
+    // Close menu when clicking outside  
+    document.addEventListener('click', function(event) {  
+        if (navMenu.classList.contains('active') &&   
+            !navMenu.contains(event.target) &&   
+            !menuToggle.contains(event.target)) {  
+            navMenu.classList.remove('active');  
+            body.classList.remove('menu-open');  
+            menuToggle.classList.remove('active');  
+            menuToggle.setAttribute('aria-label', 'Open menu');  
+        }  
+    });  
+</script>  
+</body>  
+</html>
