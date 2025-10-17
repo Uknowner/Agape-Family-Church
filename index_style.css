@@ -411,6 +411,21 @@ section img {
     }
 }
 
+@media (max-width: 768px) {
+    .mobile-close-item {
+        display: block !important;
+        border-top: 2px solid var(--accent-gold);
+        margin-top: 10px;
+        padding-top: 10px;
+    }
+    
+    .mobile-close-btn {
+        color: var(--accent-gold) !important;
+        font-weight: bold;
+        text-align: center;
+    }
+}
+
 /* Footer */
 footer {
     background: var(--primary-blue);
