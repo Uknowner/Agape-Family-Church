@@ -515,3 +515,203 @@ html {
         grid-template-columns: 1fr;
     }
 }
+
+/* Background Image Classes */
+.background-image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.background-image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(44, 62, 80, 0.6); /* Blue overlay */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.background-image-overlay-light {
+    background: rgba(255, 255, 255, 0.8); /* Light overlay */
+    color: var(--text-dark);
+}
+
+/* Specific background image classes */
+.background-church {
+    background-image: url('images/church-building.jpg');
+}
+
+.background-community {
+    background-image: url('images/church-community.jpg');
+}
+
+.background-worship {
+    background-image: url('images/worship-service.jpg');
+}
+
+.background-prayer {
+    background-image: url('images/prayer-group.jpg');
+}
+
+.background-bible {
+    background-image: url('images/bible-study.jpg');
+}
+
+.background-youth {
+    background-image: url('images/youth-group.jpg');
+}
+
+.background-default {
+    background: linear-gradient(135deg, var(--primary-blue), #1a2530);
+}
+
+/* Background Video Classes */
+.background-video {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+}
+
+.background-video video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    object-fit: cover;
+}
+
+.background-video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(44, 62, 80, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+/* Section with background variations */
+.section-with-background {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--text-light);
+    position: relative;
+    margin: 30px 0;
+    padding: 80px 40px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.section-with-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(44, 62, 80, 0.8);
+    z-index: 1;
+}
+
+.section-with-background > * {
+    position: relative;
+    z-index: 2;
+}
+
+.section-with-background h2 {
+    color: var(--text-light);
+    border-left: 5px solid var(--accent-gold);
+}
+
+.section-with-background p {
+    color: var(--text-light);
+}
+
+/* Hero section with background */
+.hero-background {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 80px 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.hero-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(44, 62, 80, 0.6);
+}
+
+.hero-background > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Card with background image */
+.card-with-background {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 300px;
+    border-radius: 15px;
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.card-with-background:hover {
+    transform: translateY(-5px);
+}
+
+.card-with-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(44, 62, 80, 0.9), transparent);
+}
+
+.card-with-background .card-content {
+    position: relative;
+    z-index: 2;
+    padding: 30px;
+    color: white;
+    width: 100%;
+}
