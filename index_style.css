@@ -211,10 +211,11 @@ nav a:hover {
     justify-content: center;
     width: 40px;
     height: 40px;
-    position: absolute;
+    position: absolute; /* ✅ Change to absolute */
     right: 20px;
     top: 10px;
     z-index: 2000;
+}
 }
 
 /* Hamburger icon */
@@ -257,7 +258,9 @@ nav a:hover {
         justify-content: flex-end;
         padding: 0;
         height: 60px;
-        position: relative;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
     }
 
     .menu-toggle {
