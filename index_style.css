@@ -355,6 +355,13 @@ h2, h3 {
     padding-left: 15px;
 }
 
+h3 {
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+    border-left: 2px solid var(--accent-gold);
+    padding-left: 15px;
+}
+
 p, li {
     color: var(--text-dark);
     line-height: 1.8;
