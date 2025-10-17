@@ -29,11 +29,21 @@
   const params = new URLSearchParams(window.location.search);
   const sermonId = params.get('id');
 
+  console.log('Looking for sermon ID:', sermonId);
+
   // Fetch sermons.json and display the correct sermon
   fetch('sermons.json')
-    .then(res => res.json())
+    .then(res => {
+      if (!res.ok) throw new Error('Failed to fetch sermons.json');
+      return res.json();
+    })
     .then(sermons => {
-      const sermon = sermons.find(s => s.id == sermonId);
+      console.log('Loaded sermons:', sermons);
+      
+      // Find sermon by date ID
+      const sermon = sermons.find(s => s.id === sermonId);
+      console.log('Found sermon:', sermon);
+      
       const container = document.getElementById('single-sermon-content');
 
       if (sermon) {
@@ -44,15 +54,42 @@
             ${sermon.speaker ? `<div><i class="fas fa-user"></i> ${sermon.speaker}</div>` : ''}
             ${sermon.duration ? `<div><i class="fas fa-clock"></i> ${sermon.duration}</div>` : ''}
           </div>
+          
+          <!-- Video Section -->
+          ${sermon.video && sermon.video !== "None" ? `
+            <div class="media-section">
+              <h3><i class="fas fa-video"></i> Watch Sermon</h3>
+              <div class="video-container">
+                <iframe src="${sermon.video}" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+          ` : ''}
+          
+          <!-- Audio Section -->
+          ${sermon.audio && sermon.audio !== "None" ? `
+            <div class="media-section">
+              <h3><i class="fas fa-volume-up"></i> Listen to Sermon</h3>
+              <div class="audio-container">
+                <audio controls style="width: 100%;">
+                  <source src="${sermon.audio}" type="audio/mpeg">
+                  Your browser does not support the audio element.
+                </audio>
+              </div>
+            </div>
+          ` : ''}
+          
           ${sermon.scripture ? `<p><strong>Key Scriptures:</strong> ${sermon.scripture}</p>` : ''}
           <br>
           ${sermon.content ? `<p><span style="white-space: pre-line;">${sermon.content}</span></p>` : ''}
-            
+        `; // ← This backtick was missing!
       } else {
-        container.innerHTML = `<p>Sermon not found.</p>`;
+        container.innerHTML = `<p>Sermon not found. Available sermons: ${sermons.map(s => s.id).join(', ')}</p>`;
       }
     })
-    .catch(err => console.error('Error loading sermons:', err));
+    .catch(err => {
+      console.error('Error loading sermons:', err);
+      document.getElementById('single-sermon-content').innerHTML = `<p>Error loading sermon: ${err.message}</p>`;
+    });
 </script>
 
 </body>
