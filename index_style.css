@@ -442,33 +442,18 @@ html {
 }
 
 /* Service Grid */
-.service-grid {
+.section-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
     margin-top: 30px;
 }
 
-.service-item {
+.section-item {
     background: #f8f9fa;
     padding: 30px;
     border-radius: 10px;
     border-left: 4px solid var(--accent-gold);
-}
-
-/* Ministries Grid */
-.ministries-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    margin-top: 30px;
-}
-
-.ministry-content {
-    background: #f8f9fa;
-    padding: 30px;
-    border-radius: 10px;
-    border-left: 4px solid var(--primary-blue);
 }
 
 /* Location Styles */
