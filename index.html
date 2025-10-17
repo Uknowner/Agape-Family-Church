@@ -69,20 +69,6 @@
       <li><a href="#contact">Contact</a></li>
       <li><a href="give.html" class="btn-outline">Give</a></li>
   </ul>
-  <nav>
-    <button class="menu-toggle" id="menuToggle">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-
-    <ul id="navMenu">
-        <!-- your menu items -->
-        <li class="mobile-close-item" style="display: none;">
-            <a href="javascript:void(0)" class="mobile-close-btn">✕ Close Menu</a>
-        </li>
-    </ul>
-</nav>
 </nav>
 
 
@@ -104,7 +90,7 @@
     <!-- Verse of the Day -->
     <section id="verse-of-the-day">
       <h2>Verse of the Day</h2>
-      <div class=service-item>
+      <div class="service-item">
         <h3>Genesis 1:1</h3>
           <p>In the beginning was the word. The word was with God and the word was God.
           </p>
@@ -125,21 +111,6 @@
           <p>Sunday 12:00 PM</p>
           <p>Dynamic services designed for the youth where we focus on growing in God and growing the church</p>
         </div>
-    </section>
-
-    <!-- Events Section -->
-    <section id="events" style="display: none;">
-      <h2>Upcoming Events</h2>
-      <div class="section-image-container">
-        <img src="events.jpg" alt="Church Events">
-      </div>
-      <ul>
-        <li><strong>Super Sunday</strong> - Special guest worship service</li>
-        <li><strong>Church Visit</strong> - Another church will be visiting</li>
-        <li><strong>Youth Events</strong> - The youth ministry will host two events</li>
-      </ul>
-      <p><strong>All events happening on October 5th, 2025</strong></p>
-      <a href="#contact" class="btn-primary">Get Involved</a>
     </section>
 
     <!-- Sermons Section -->
@@ -188,65 +159,17 @@
           </a>
         </p>
       </div>
+      
       <!-- Location buttons for Katlehong Resource Centre -->
-<section id="location">
-  <h3>Find Us 📍</h3>
-
-  <!-- Google Maps Directions -->
-  <button onclick="window.open('https://www.google.com/maps/dir/?api=1&destination=-26.36010,28.16137&travelmode=driving', '_blank')">
-    Directions (Google Maps)
-  </button>
-
-  <!-- Android Geo Link -->
-  <button onclick="window.location='geo:-26.36010,28.16137?q=-26.36010,28.16137(Katlehong%20Resource%20Centre)'">
-    Open in Device Maps
-  </button>
-</section>
-
-<script>
-document.getElementById('ride-btn').addEventListener('click', () => {
-  const ua = navigator.userAgent || '';
-  const androidIntent = `intent://#Intent;scheme=bolt;package=ee.mtakso.client;S.browser_fallback_url=${encodeURIComponent('https://bolt.eu/')} ;end`;
-  
-  if (/android/i.test(ua)) {
-    // Android: try open Bolt app
-    window.location = androidIntent;
-  } else if (/iphone|ipad|ipod/i.test(ua)) {
-    // iOS: open Bolt App Store page
-    window.location = 'https://apps.apple.com/app/id675033630';
-  } else {
-    // Desktop fallback: open Bolt website
-    window.open('https://bolt.eu/', '_blank');
-  }
-});
-</script>
-
-<style>
-#location {
-  text-align: center;
-  margin: 30px auto;
-  font-family: 'Poppins', sans-serif;
-}
-#location h3 {
-  font-size: 1.5em;
-  margin-bottom: 15px;
-}
-#location button {
-  margin: 8px;
-  padding: 10px 18px;
-  border: none;
-  border-radius: 8px;
-  background-color: #2e7d32;
-  color: white;
-  cursor: pointer;
-  font-size: 1em;
-  transition: background 0.3s ease;
-}
-#location button:hover {
-  background-color: #388e3c;
-}
-</style>
-
+      <section id="location">
+        <h3>Find Us 📍</h3>
+        <button onclick="window.open('https://www.google.com/maps/dir/?api=1&destination=-26.36010,28.16137&travelmode=driving', '_blank')">
+          Directions (Google Maps)
+        </button>
+        <button onclick="window.location='geo:-26.36010,28.16137?q=-26.36010,28.16137(Katlehong%20Resource%20Centre)'">
+          Open in Device Maps
+        </button>
+      </section>
     </section>
 
     <!-- Google AdSense Ad -->
@@ -266,59 +189,58 @@ document.getElementById('ride-btn').addEventListener('click', () => {
     <p>&copy; 2025 Agape Family Church. All rights reserved.</p>
     <p>
       <a href="give.html">Give</a>    
-      <a href="terms.html"     target="_blank">Terms & Conditions</a>    
+      <a href="terms.html" target="_blank">Terms & Conditions</a>    
       <a href="privacy.html">Privacy Policy</a>
     </p>
-    <h3>Demonstrating God's unconditional love to all mankind</p
-h3>
+    <h3>Demonstrating God's unconditional love to all mankind</h3>
   </footer>
 
 <script>
-    // Mobile menu functionality - FIXED VERSION
-    // Show/hide close button
-menuToggle.addEventListener('click', function() {
-    const isActive = this.classList.toggle('active');
-    navMenu.classList.toggle('active');
-    body.classList.toggle('menu-open');
-    
-    // Show close button in menu
-    const closeBtn = document.querySelector('.mobile-close-item');
-    if (closeBtn) {
-        closeBtn.style.display = isActive ? 'block' : 'none';
-    }
-});
+    // Mobile menu functionality - SIMPLE FIXED VERSION
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+    const body = document.body;
 
-// Close menu when clicking the close button
-document.querySelector('.mobile-close-btn')?.addEventListener('click', function() {
-    navMenu.classList.remove('active');
-    body.classList.remove('menu-open');
-    menuToggle.classList.remove('active');
-    document.querySelector('.mobile-close-item').style.display = 'none';
-});
-        menuToggle.classList.remove('active');
-      });
+    menuToggle.addEventListener('click', function() {
+        const isActive = navMenu.classList.toggle('active');
+        body.classList.toggle('menu-open');
+        this.classList.toggle('active');
+        
+        // Update aria-label for accessibility
+        this.setAttribute('aria-label', isActive ? 'Close menu' : 'Open menu');
+    });
+
+    // Close menu when clicking on a link
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            body.classList.remove('menu-open');
+            menuToggle.classList.remove('active');
+            menuToggle.setAttribute('aria-label', 'Open menu');
+        });
     });
 
     // Close menu on Escape key
     document.addEventListener('keydown', function(event) {
-      if (event.key === 'Escape' && navMenu.classList.contains('active')) {
-        navMenu.classList.remove('active');
-        body.classList.remove('menu-open');
-        menuToggle.classList.remove('active');
-      }
+        if (event.key === 'Escape' && navMenu.classList.contains('active')) {
+            navMenu.classList.remove('active');
+            body.classList.remove('menu-open');
+            menuToggle.classList.remove('active');
+            menuToggle.setAttribute('aria-label', 'Open menu');
+        }
     });
-  </script>
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        if (navMenu.classList.contains('active') && 
+            !navMenu.contains(event.target) && 
+            !menuToggle.contains(event.target)) {
+            navMenu.classList.remove('active');
+            body.classList.remove('menu-open');
+            menuToggle.classList.remove('active');
+            menuToggle.setAttribute('aria-label', 'Open menu');
+        }
+    });
+</script>
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
