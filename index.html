@@ -83,7 +83,6 @@
     </script>
 </head>
 
-<!-- Added follow-color-scheme class here -->
 <body class="follow-color-scheme">
     <!-- Header with background image -->
     <header>
@@ -110,7 +109,121 @@
     </nav>
 
     <main>
-        <!-- All your sections remain the same -->
+        <!-- Home Section -->
+        <div class="image-with-text">
+            <img src="welcome.jpg" alt="Church Community">
+            <div class="overlay-text">
+                <h1>Welcome to Our Church</h1>
+                <p>Join our loving community</p>
+            </div>
+        </div>
+
+        <!-- Sunday Services Section -->
+        <div class="image-with-text" style="display: none;">
+            <img src="sermons.jpg" alt="Worship">
+            <div class="overlay-text">
+                <h2>Sunday Services</h2>
+                <p>Join us for worship at 8:00 AM & 9:00 AM</p>
+                <a href="#services" class="btn-primary">Learn More</a>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <div class="image-with-text">
+            <img src="about-us.jpg" alt="About Us">
+            <div class="overlay-text">
+                <h2>About Us</h2>
+                <p>Our church aims to show God's love to humanity...</p>
+                <a href="about-us.html" class="btn-primary">Our Story</a>
+            </div>
+        </div>
+
+        <!-- Verse of the Day -->
+        <div class="image-with-text" style="display:none;">
+            <img src="sermons.jpg" alt="Verse Background">
+            <div class="overlay-text">
+                <h2>Verse of the Day</h2>
+                <h3>Genesis 1:1</h3>
+                <p>In the beginning was the word. The word was with God and the word was God.</p>
+            </div>
+        </div>
+
+        <!-- Services Section (grid) -->
+        <section id="services" style="display: none !important;">
+            <h2>Our Services</h2>
+            <div class="section-grid">
+                <div class="section-item">
+                    <h3>Sunday Worship</h3>
+                    <p>8:00 AM & 09:00 AM</p>
+                    <p>Join us for uplifting worship and powerful messages where Pastor Joshua Mthanyelo or guest speaker delivers a powerful sermon</p>
+                </div>
+                <div class="section-item">
+                    <h3>Youth Service</h3>
+                    <p>Sunday 12:00 PM</p>
+                    <p>Dynamic services designed for the youth where we focus on growing in God and growing the church</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sermons Section -->
+        <div class="image-with-text">
+            <img src="sermons.jpg" alt="Bible and Sermon Materials">
+            <div class="overlay-text">
+                <h2>Latest Sermons</h2>
+                <p>Read the sermons by our Pastor and guest speakers from every Sunday. We at Agape Family Church believe that love is to be shown to all mankind, and in doing so we resemble Jesus.</p>
+                <a href="sermons.html" class="btn-primary">See Sermons</a>
+            </div>
+        </div>
+
+        <!-- Ministries Section (grid) -->
+        <section id="ministries" style="display: none !important;">
+            <h2>Our Ministries</h2>
+            <div class="section-grid">
+                <div class="section-item">
+                    <h3>Children's Ministry</h3>
+                    <p>Nurturing young hearts in faith. Your children are cared for by our devoted parents and volunteering youth ministry members....</p>
+                </div>
+                <div class="section-item">
+                    <h3>Youth Ministry</h3>
+                    <p>Empowering the next generation. Join us after main service as the youth joins to bond and grow in Christ.</p>
+                    <img src="IMG-20250907-WA0044.jpg" alt="Picture Youth Ministry" class="background-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <div class="image-with-text">
+            <img src="contact-us-section.jpg" alt="Contact Agape Family Church">
+            <div class="overlay-text">
+                <h2>Contact Us</h2>
+                <p><strong>Email:</strong> 
+                    <a href="mailto:info@agapefamilychurch.org" style="text-decoration: underline;">
+                        info@agapefamilychurch.org
+                    </a>
+                </p>
+                <p><strong>Address:</strong> 
+                    <a href="geo:-26.36010,28.16137?q=-26.36010,28.16137(Katlehong%20Resource%20Centre)" style="text-decoration: underline;">
+                        Katlehong Resource Centre, South Africa
+                    </a>
+                </p>
+                <p><strong>Facebook:</strong> 
+                    <a href="https://www.facebook.com/AgapeFCKatlehong/" target="_blank" rel="noopener noreferrer" style="text-decoration: underline;">
+                        Agape Family Church Katlehong
+                    </a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Google AdSense Ad -->
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-9924628966951206"
+            data-ad-slot="YOUR_AD_SLOT"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
     </main>
 
     <!-- Footer -->
@@ -123,8 +236,8 @@
         <h3>Demonstrating God's unconditional love to all mankind</h3>
     </footer>
 
-    <!-- Mobile menu script (unchanged) -->
     <script>
+        // Mobile menu functionality - SIMPLE FIXED VERSION
         const menuToggle = document.getElementById('menuToggle');
         const navMenu = document.getElementById('navMenu');
         const body = document.body;
@@ -133,6 +246,7 @@
             const isActive = navMenu.classList.toggle('active');
             body.classList.toggle('menu-open');
             this.classList.toggle('active');
+
             this.setAttribute('aria-label', isActive ? 'Close menu' : 'Open menu');
         });
 
