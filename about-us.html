@@ -1,242 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>About — Agape Family Church</title>
-  <meta name="description" content="Agape Family Church — Demonstrating God's unconditional love to all mankind. Learn about our mission, vision, beliefs, leadership and ministries." />
-  <link rel="stylesheet" href="index_style.css" />
-
-  <!-- Open Graph (useful for social sharing) -->
-  <meta property="og:title" content="About — Agape Family Church" />
-  <meta property="og:description" content="Agape Family Church: mission, vision, values, leadership and ministries." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="images/agape-hero.jpg" />
-
-  <!-- Structured Data: Organization -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Church",
-    "name": "Agape Family Church",
-    "url": "https://your-site.example/",
-    "logo": "https://your-site.example/images/logo.png",
-    "description": "Demonstrating God's unconditional love to all mankind.",
-    "sameAs": []
-  }
-  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Agape Family Church</title>
+  <link rel="stylesheet" href="index_style.css">
+  <meta name="description" content="Learn about Agape Family Church — our mission, vision, leadership, and ministries.">
 </head>
 <body>
-  <header class="site-header" role="banner">
-    <nav class="main-nav" role="navigation" aria-label="Main navigation">
-      <a class="logo" href="index.html" aria-label="Agape Family Church home">Agape Family Church</a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
-      <ul id="primary-nav" class="nav-list">
+  <!-- Navigation -->
+  <header>
+    <nav>
+      <h1 class="logo"><a href="index.html">Agape Family Church</a></h1>
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active">About</a></li>
+        <li><a class="active" href="about.html">About</a></li>
         <li><a href="ministries.html">Ministries</a></li>
-        <li><a href="media.html">Media</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <main id="main" class="page-about" role="main">
-    <!-- Hero -->
-    <section class="hero hero--about" aria-labelledby="about-hero-title">
-      <div class="container hero__inner">
-        <h1 id="about-hero-title">About Agape Family Church</h1>
-        <p class="lead">Demonstrating God's unconditional love to all mankind — welcoming every person into relationship with Jesus Christ. ❤️</p>
-        <p class="hero-cta">
-          <a class="btn" href="contact.html">Visit Us</a>
-          <a class="btn btn--ghost" href="ministries.html">Our Ministries</a>
-        </p>
-      </div>
-    </section>
-
-    <!-- Our Mission & Vision -->
-    <section class="section section--mission" aria-labelledby="mission-heading">
-      <div class="container">
-        <div class="grid grid--2">
-          <div>
-            <h2 id="mission-heading">Our Mission</h2>
-            <p>To demonstrate God's unconditional love (Agape) by making disciples, strengthening families, and serving our community. We are committed to clear biblical teaching, heartfelt worship, and practical compassion.</p>
-
-            <h3>Our Vision</h3>
-            <p>To be a growing family of believers who transform our neighbourhood through prayer, gospel-centered teaching, practical service and the empowerment of young leaders.</p>
-          </div>
-
-          <aside class="card card--values" aria-label="Core values">
-            <h3>Core Values</h3>
-            <ul>
-              <li><strong>Christ-centered</strong> — Scripture shapes everything we do.</li>
-              <li><strong>Love</strong> — Unconditional compassion for all people.</li>
-              <li><strong>Community</strong> — Life together, supporting one another.</li>
-              <li><strong>Discipleship</strong> — Growing in faith, serving with skill.</li>
-              <li><strong>Youth & Leadership</strong> — Developing the next generation of leaders.</li>
-            </ul>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <!-- Beliefs -->
-    <section class="section section--beliefs" aria-labelledby="beliefs-heading">
-      <div class="container">
-        <h2 id="beliefs-heading">What We Believe</h2>
-        <p>We hold to historic Christian truth summarized briefly below. For a full statement of faith, please <a href="contact.html">contact the church office</a>.</p>
-
-        <div class="beliefs-list">
-          <article class="belief">
-            <h4>The Bible</h4>
-            <p>The Bible is God's inspired Word and is authoritative for faith and life.</p>
-          </article>
-
-          <article class="belief">
-            <h4>God</h4>
-            <p>There is one triune God—Father, Son, and Holy Spirit—creator and sustainer of all things.</p>
-          </article>
-
-          <article class="belief">
-            <h4>Jesus Christ</h4>
-            <p>Jesus Christ, fully God and fully man, lived a sinless life, died for our sins, rose again, and will return in glory.</p>
-          </article>
-
-          <article class="belief">
-            <h4>Salvation</h4>
-            <p>Salvation is by grace through faith in Jesus Christ alone.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Leadership -->
-    <section class="section section--leadership" aria-labelledby="leadership-heading">
-      <div class="container">
-        <h2 id="leadership-heading">Leadership Team</h2>
-        <p>Agape Family Church is led by a team of pastors and ministry leaders committed to spiritual growth, pastoral care, and strong governance.</p>
-
-        <ul class="team-grid">
-          <!-- Replace placeholders with real images and bios -->
-          <li class="team-member">
-            <img src="images/pastor-1.jpg" alt="Pastor John Doe" />
-            <h4>Pastor John Doe</h4>
-            <p>Lead Pastor — preaching, vision, pastoral care.</p>
-          </li>
-
-          <li class="team-member">
-            <img src="images/pastor-2.jpg" alt="Pastor Jane Smith" />
-            <h4>Pastor Jane Smith</h4>
-            <p>Youth & Discipleship Leader — youth ministry and leadership development.</p>
-          </li>
-
-          <li class="team-member">
-            <img src="images/media-lead.jpg" alt="Media Leader" />
-            <h4>Media & Communications</h4>
-            <p>Oversees media, livestream, and church communications.</p>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Ministries (brief overview & CTA) -->
-    <section class="section section--ministries" aria-labelledby="ministries-heading">
-      <div class="container">
-        <h2 id="ministries-heading">Our Ministries</h2>
-        <p>We run ministries that meet people where they are: worship, youth, children's programs, small groups, community outreach, and media & tech for gospel growth.</p>
-
-        <div class="grid grid--3">
-          <div class="ministry">
-            <h4>Sunday Services</h4>
-            <p>Worship and biblical preaching for all ages.</p>
-          </div>
-
-          <div class="ministry">
-            <h4>Youth & Young Adults</h4>
-            <p>Training, mentorship, leadership development and events for young people.</p>
-          </div>
-
-          <div class="ministry">
-            <h4>Community Outreach</h4>
-            <p>Practical help: food distribution, counseling referrals, and local partnerships.</p>
-          </div>
-        </div>
-
-        <p class="text-center">
-          <a class="btn" href="ministries.html">Explore All Ministries</a>
-        </p>
-      </div>
-    </section>
-
-    <!-- History / Timeline -->
-    <section class="section section--history" aria-labelledby="history-heading">
-      <div class="container">
-        <h2 id="history-heading">Our Story</h2>
-        <p>Agape Family Church began as a small group of believers who wanted to demonstrate God's love practically. Over time we have grown into a multi-generational congregation focused on discipleship, worship and community service.</p>
-
-        <ol class="timeline">
-          <li><strong>Founding:</strong> Small home group launched regular gatherings.</li>
-          <li><strong>First Building:</strong> Secured a meeting space and formalized ministries.</li>
-          <li><strong>Growth & Outreach:</strong> Expanded youth programs and community initiatives.</li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- Contact / Visit -->
-    <section class="section section--contact-cta" aria-labelledby="visit-heading">
-      <div class="container">
-        <h2 id="visit-heading">Visit or Connect</h2>
-        <p>We'd love to welcome you. For service times, directions, or to speak with a pastor, please use the contact page.</p>
-        <p>
-          <a class="btn" href="contact.html">Get in touch</a>
-          <a class="btn btn--ghost" href="index.html#service-times">Service Times</a>
-        </p>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer" role="contentinfo">
-    <div class="container footer__inner">
-      <div class="footer-about">
-        <a class="logo" href="index.html">Agape Family Church</a>
-        <p>Demonstrating God's unconditional love to all mankind.</p>
-      </div>
-
-      <div class="footer-contact" aria-label="Contact details">
-        <p><strong>Address:</strong> 123 Church Street, Your City</p>
-        <p><strong>Email:</strong> <a href="mailto:info@agapefamily.example">info@agapefamily.example</a></p>
-        <p><strong>Phone:</strong> <a href="tel:+27123456789">+27 12 345 6789</a></p>
-      </div>
-
-      <nav class="footer-nav" aria-label="Footer navigation">
-        <ul>
-          <li><a href="privacy.html">Privacy</a></li>
-          <li><a href="terms.html">Terms</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
+  <!-- Hero Section -->
+  <section class="hero" style="background-image: url('images/church-bg.jpg'); background-size: cover; background-position: center;">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h2>About Us</h2>
+      <p>Demonstrating God's unconditional love to all mankind ❤️</p>
     </div>
+  </section>
 
-    <div class="container footer-bottom">
-      <small>© <span id="year"></span> Agape Family Church. All rights reserved.</small>
+  <!-- Mission & Vision -->
+  <section class="about-section">
+    <h2>Our Mission</h2>
+    <p>To demonstrate God's unconditional love (Agape) by leading people to Christ, strengthening families, and serving the community with compassion and truth.</p>
+
+    <h2>Our Vision</h2>
+    <p>To build a Christ-centered family church that transforms lives through the power of the Holy Spirit, reaching Katlehong and beyond with the gospel of Jesus Christ.</p>
+  </section>
+
+  <!-- Core Values -->
+  <section class="about-section light-bg">
+    <h2>Our Core Values</h2>
+    <ul class="values">
+      <li><strong>Faith:</strong> Trusting God in all things.</li>
+      <li><strong>Love:</strong> Showing unconditional love to all.</li>
+      <li><strong>Service:</strong> Serving God by serving others.</li>
+      <li><strong>Unity:</strong> Building a strong family in Christ.</li>
+      <li><strong>Growth:</strong> Equipping believers for purpose and leadership.</li>
+    </ul>
+  </section>
+
+  <!-- Leadership -->
+  <section class="about-section">
+    <h2>Leadership</h2>
+    <div class="leader">
+      <img src="images/pastor-joshua.jpg" alt="Pastor Joshua Mthanyelo">
+      <div class="leader-info">
+        <h3>Pastor Joshua Mthanyelo</h3>
+        <p>Lead Pastor, Agape Family Church</p>
+        <p>Pastor Joshua is a passionate servant of Christ with a heart for community transformation, youth development, and spreading the gospel with power and clarity.</p>
+      </div>
     </div>
+  </section>
+
+  <!-- Ministries -->
+  <section class="about-section light-bg">
+    <h2>Our Ministries</h2>
+    <p>We believe in equipping every believer to serve. Our ministries include:</p>
+    <ul>
+      <li>Sunday Services — Fellowship and worship for the whole family.</li>
+      <li>Youth & Young Adults — Training, events, and leadership building.</li>
+      <li>Community Outreach — Food drives, care visits, and counseling support.</li>
+      <li>Media & Worship — Using creativity to spread the Word.</li>
+    </ul>
+  </section>
+
+  <!-- Visit & Social -->
+  <section class="about-section center-text">
+    <h2>Connect With Us</h2>
+    <p>Follow us on Facebook for updates, livestreams, and inspiration:</p>
+    <p><a href="https://www.facebook.com/AgapeFCKatlehong/" target="_blank" class="btn">📘 Visit Our Facebook Page</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© <span id="year"></span> Agape Family Church | Demonstrating God's Unconditional Love</p>
   </footer>
 
   <script>
-    // Small JS to update year and accessible nav toggle (optional)
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Simple nav toggle for small screens (progressive enhancement)
-    (function () {
-      const btn = document.querySelector('.nav-toggle');
-      const nav = document.getElementById('primary-nav');
-      if (!btn || !nav) return;
-      btn.addEventListener('click', function () {
-        const expanded = this.getAttribute('aria-expanded') === 'true';
-        this.setAttribute('aria-expanded', String(!expanded));
-        nav.classList.toggle('open');
-      });
-    })();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
