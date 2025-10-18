@@ -1,11 +1,9 @@
 /* Base Colors */
 :root {
-    --primary-blue: #2c3e50;    /* Navigation, footer */
-    --accent-gold: #ffd700;     /* Buttons, highlights */
-    --text-dark: #2c3e50;       /* Dark text for light mode */
-    --text-light: #ffffff;      /* Light text for dark mode */
-    --background-light: #ffffff;
-    --background-dark: #1a1a1a;
+    --primary-blue: #2c3e50;    /* Main brand color - navigation, footer */
+    --accent-gold: #ffd700;     /* Accent color - buttons, highlights, headings */
+    --text-dark: #2c3e50;       /* Default text color */
+    --text-light: #ffffff;      /* Light text color */
 }
 
 /* Reset some defaults */
@@ -17,21 +15,9 @@
 
 body {
     font-family: 'Merriweather', serif;
-    background-color: var(--background-light);
+    background-color: #ffffff;
     color: var(--text-dark);
     line-height: 1.6;
-}
-
-/* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: var(--background-dark);
-        color: var(--text-light);
-    }
-
-    a, .overlay-text, .btn-primary, .btn-outline, footer {
-        color: var(--text-light);
-    }
 }
 
 /* Header */
@@ -108,7 +94,6 @@ nav a:hover {
 .image-with-text {
     position: relative;
     text-align: center;
-    color: var(--text-dark);
 }
 
 .image-with-text img {
@@ -122,17 +107,6 @@ nav a:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
-
-/* Text color following theme */
-h1, h2, h3, h4, h5, h6, p, a, li, .overlay-text, .btn-primary, .btn-outline, footer {
-    color: var(--text-dark);
-}
-
-@media (prefers-color-scheme: dark) {
-    h1, h2, h3, h4, h5, h6, p, a, li, .overlay-text, .btn-primary, .btn-outline, footer {
-        color: var(--text-light);
-    }
 }
 
 /* Buttons */
@@ -179,12 +153,6 @@ h1, h2, h3, h4, h5, h6, p, a, li, .overlay-text, .btn-primary, .btn-outline, foo
     padding: 1rem;
     border-radius: 10px;
     box-shadow: 0 0 5px rgba(0,0,0,0.1);
-}
-
-@media (prefers-color-scheme: dark) {
-    .section-item {
-        background-color: rgba(30,30,30,0.9);
-    }
 }
 
 /* Footer */
