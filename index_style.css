@@ -1,488 +1,240 @@
-/* Base Colors (already defined) */
-:root {
-    --primary-blue: #2c3e50;
-    --accent-gold: #ffd700;
-    --text-dark: #2c3e50;   /* text on light backgrounds */
-    --text-light: #fff;     /* text on dark backgrounds */
-    --section-bg: #ffffff;  /* light section background */
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Agape Family Church</title>
+    <meta name="description" content="Agape Family Church - Demonstrating God's unconditional love to all mankind.">
+    <meta name="keywords" content="Church, Agape, Jesus, God, Christ, Christian, Agape Family Church, Agape Family Church Katlehong">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-/* follow-color-scheme class */
-.follow-color-scheme {
-    /* Default: light mode */
-    --text-dark: #2c3e50;
-    --text-light: #fff;
-    --section-bg: #ffffff;
-}
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 
-/* Dark mode: follow user's system preference */
-@media (prefers-color-scheme: dark) {
-    .follow-color-scheme {
-        --text-dark: #f0f0f0;    /* light text on dark backgrounds */
-        --text-light: #1a1a1a;   /* dark text on light overlays */
-        --section-bg: #1a1a1a;   /* dark section background */
-    }
-}
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9924628966951206" crossorigin="anonymous"></script>
 
-/* Example usage in elements */
-.follow-color-scheme body,
-.follow-color-scheme p,
-.follow-color-scheme li,
-.follow-color-scheme section {
-    color: var(--text-dark);
-    background-color: var(--section-bg);
-}
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="index_style.css">
 
-.follow-color-scheme a {
-    color: var(--primary-blue);
-}
+    <style>
+        /* Optional inline styles for ads to match your theme */
+        .adsbygoogle {
+            display: block;
+            margin: 40px auto;
+            border-radius: 15px;
+            overflow: hidden;
+        }
 
-/* Header */
-header {
-    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url("logo_1.webp") no-repeat center center;
-    background-size: 100% 100%;
-    background-color: var(--primary-blue);
-    color: white;
-    text-align: center;
-    padding: 80px 20px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 50vh;
-}
+        /* Follow color scheme for text only */
+        .follow-color-scheme {
+            color: var(--text-dark); /* default for light mode */
+        }
 
-header h1 {
-    font-size: 4rem;
-    margin-bottom: 20px;
-    font-weight: 700;
-    line-height: 1.2;
-    background: linear-gradient(45deg, var(--accent-gold), #fff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
-}
+        @media (prefers-color-scheme: dark) {
+            .follow-color-scheme {
+                color: var(--text-light);
+            }
+        }
+    </style>
 
-.slogan {
-    font-size: 1.6rem;
-    font-style: italic;
-    font-weight: 300;
-    position: relative;
-    top: 200px;
-    left: 0%;
-}
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'YOUR_GA_ID');
+    </script>
 
-/* Global anchor styling */
-a {
-    text-decoration: none;
-    color: #2c3e50;
-}
+    <script>
+      // Allow trusted crawlers (Google, Bing, Facebook, OpenAI, etc.)
+      const userAgent = navigator.userAgent.toLowerCase();
 
-/* Button Base Styles */
-.btn, .btn-primary, .btn-outline {
-    display: inline-block;
-    padding: 12px 35px;
-    border-radius: 50px;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-decoration: none;
-    letter-spacing: 1px;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    border: 2px solid transparent;
-    text-align: center;
-}
+      const trustedBots = [
+        "googlebot",
+        "bingbot",
+        "duckduckbot",
+        "facebookexternalhit",
+        "twitterbot",
+        "linkedinbot",
+        "pinterest",
+        "slackbot",
+        "discordbot",
+        "applebot",
+        "chatgpt",
+        "openai",
+        "gptbot"
+      ];
 
-.btn-primary {
-    background: var(--accent-gold);
-    color: var(--primary-blue);
-    padding: 15px 40px;
-}
+      // Block typical scraping or command-line bots
+      const badBots = /curl|wget|python|httpclient|java|libwww|scrapy|spider|node-fetch/i;
 
-.btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(255,215,0,0.5);
-}
+      const isTrustedBot = trustedBots.some(bot => userAgent.includes(bot));
+      const isBadBot = badBots.test(userAgent);
 
-.btn-outline {
-    background: transparent;
-    color: var(--accent-gold);
-    border: 2px solid var(--accent-gold);
-    padding: 15px 40px;
-}
+      if (isBadBot && !isTrustedBot) {
+        document.body.innerHTML = "<h1>Access Denied</h1>";
+        window.stop();
+      }
+    </script>
+</head>
 
-.btn-outline:hover {
-    background: var(--accent-gold);
-    color: var(--primary-blue);
-    transform: translateY(-3px);
-}
+<body>
+    <!-- Header with background image -->
+    <header>
+        <div class="logo-container" style="display: none;">
+            <p class="slogan follow-color-scheme">Demonstrating God's unconditional love to all mankind</p>
+        </div>
+    </header>
 
-/* Navigation Styles */
-nav {
-    background: var(--primary-blue);
-    padding: 1rem 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 60px;
-}
+    <!-- Navigation bar -->
+    <nav>
+        <button class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul id="navMenu">
+            <li><a href="#about" class="follow-color-scheme">About</a></li>
+            <li><a href="#services" class="follow-color-scheme">Services</a></li>
+            <li><a href="#ministries" class="follow-color-scheme">Ministries</a></li>
+            <li><a href="#sermons" class="follow-color-scheme">Sermons</a></li>
+            <li><a href="#contact" class="follow-color-scheme">Contact</a></li>
+            <li><a href="give.html" class="btn-outline follow-color-scheme">Give</a></li>
+        </ul>
+    </nav>
 
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 0;
-    padding: 0;
-}
+    <main>
+        <!-- Home Section -->
+        <div class="image-with-text">
+            <img src="welcome.jpg" alt="Church Community">
+            <div class="overlay-text follow-color-scheme">
+                <h1 class="follow-color-scheme">Welcome to Our Church</h1>
+                <p class="follow-color-scheme">Join our loving community</p>
+            </div>
+        </div>
 
-nav li {
-    margin: 0 15px;
-}
+        <!-- About Section -->
+        <div class="image-with-text">
+            <img src="about-us.jpg" alt="About Us">
+            <div class="overlay-text follow-color-scheme">
+                <h2 class="follow-color-scheme">About Us</h2>
+                <p class="follow-color-scheme">Our church aims to show God's love to humanity...</p>
+                <a href="about-us.html" class="btn-primary follow-color-scheme">Our Story</a>
+            </div>
+        </div>
 
-nav a {
-    color: var(--text-light);
-    text-decoration: none;
-    font-weight: 700;
-    padding: 10px 15px;
-    border-radius: 5px;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-    display: block;
-}
+        <!-- Services Section -->
+        <section id="services" style="display: none !important;">
+            <h2 class="follow-color-scheme">Our Services</h2>
+            <div class="section-grid">
+                <div class="section-item follow-color-scheme">
+                    <h3 class="follow-color-scheme">Sunday Worship</h3>
+                    <p class="follow-color-scheme">8:00 AM & 09:00 AM</p>
+                    <p class="follow-color-scheme">Join us for uplifting worship and powerful messages where Pastor Joshua Mthanyelo or guest speaker delivers a powerful sermon</p>
+                </div>
+                <div class="section-item follow-color-scheme">
+                    <h3 class="follow-color-scheme">Youth Service</h3>
+                    <p class="follow-color-scheme">Sunday 12:00 PM</p>
+                    <p class="follow-color-scheme">Dynamic services designed for the youth where we focus on growing in God and growing the church</p>
+                </div>
+            </div>
+        </section>
 
-nav a:hover {
-    background: var(--accent-gold);
-    color: var(--primary-blue);
-}
+        <!-- Sermons Section -->
+        <div class="image-with-text">
+            <img src="sermons.jpg" alt="Bible and Sermon Materials">
+            <div class="overlay-text follow-color-scheme">
+                <h2 class="follow-color-scheme">Latest Sermons</h2>
+                <p class="follow-color-scheme">Read the sermons by our Pastor and guest speakers from every Sunday. We at Agape Family Church believe that love is to be shown to all mankind, and in doing so we resemble Jesus.</p>
+                <a href="sermons.html" class="btn-primary follow-color-scheme">See Sermons</a>
+            </div>
+        </div>
 
-/* Mobile Navigation */
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    flex-direction: column;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    right: 20px;
-    top: 10px;
-    z-index: 2000;
-}
+        <!-- Contact Section -->
+        <div class="image-with-text">
+            <img src="contact-us-section.jpg" alt="Contact Agape Family Church">
+            <div class="overlay-text follow-color-scheme">
+                <h2 class="follow-color-scheme">Contact Us</h2>
+                <p class="follow-color-scheme"><strong>Email:</strong> 
+                    <a href="mailto:info@agapefamilychurch.org" class="follow-color-scheme">info@agapefamilychurch.org</a>
+                </p>
+                <p class="follow-color-scheme"><strong>Address:</strong> 
+                    <a href="geo:-26.36010,28.16137?q=-26.36010,28.16137(Katlehong%20Resource%20Centre)" class="follow-color-scheme">
+                        Katlehong Resource Centre, South Africa
+                    </a>
+                </p>
+                <p class="follow-color-scheme"><strong>Facebook:</strong> 
+                    <a href="https://www.facebook.com/AgapeFCKatlehong/" target="_blank" rel="noopener noreferrer" class="follow-color-scheme">
+                        Agape Family Church Katlehong
+                    </a>
+                </p>
+            </div>
+        </div>
 
-.menu-toggle span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 3px 0;
-    background-color: white;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-    transform-origin: center;
-}
+        <!-- Google AdSense Ad -->
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-9924628966951206"
+            data-ad-slot="YOUR_AD_SLOT"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </main>
 
-.menu-toggle.active span:nth-child(1) {
-    transform: rotate(45deg) translate(6px, 6px);
-}
-.menu-toggle.active span:nth-child(2) {
-    opacity: 0;
-}
-.menu-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
-}
+    <!-- Footer -->
+    <footer class="follow-color-scheme">
+        <p>&copy; 2025 Agape Family Church. All rights reserved.</p>
+        <p>
+            <a href="terms.html" target="_blank" class="follow-color-scheme">Terms & Conditions</a>  |  
+            <a href="privacy.html" class="follow-color-scheme">Privacy Policy</a>
+        </p>
+        <h3 class="follow-color-scheme">Demonstrating God's unconditional love to all mankind</h3>
+    </footer>
 
-/* Mobile Styles */
-@media (max-width: 768px) {
-    header {
-        min-height: 60vh;
-        padding: 40px 20px;
-        background-size: cover;
-    }
+    <!-- Mobile menu script -->
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        const body = document.body;
 
-    .slogan {
-        top: 150px;
-        font-size: 1.2rem;
-    }
+        menuToggle.addEventListener('click', function() {
+            const isActive = navMenu.classList.toggle('active');
+            body.classList.toggle('menu-open');
+            this.classList.toggle('active');
+            this.setAttribute('aria-label', isActive ? 'Close menu' : 'Open menu');
+        });
 
-    nav {
-        justify-content: flex-end;
-        padding: 0;
-        height: 60px;
-    }
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                body.classList.remove('menu-open');
+                menuToggle.classList.remove('active');
+                menuToggle.setAttribute('aria-label', 'Open menu');
+            });
+        });
 
-    .menu-toggle {
-        display: flex;
-        position: absolute;
-        top: 10px;
-        right: 15px;
-        background: rgba(44, 62, 80, 0.9);
-        border-radius: 5px;
-    }
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                body.classList.remove('menu-open');
+                menuToggle.classList.remove('active');
+                menuToggle.setAttribute('aria-label', 'Open menu');
+            }
+        });
 
-    nav ul {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: var(--primary-blue);
-        flex-direction: column;
-        padding: 80px 0 0 0;
-        margin: 0;
-        z-index: 1500;
-        overflow-y: auto;
-    }
-
-    nav ul.active {
-        display: flex;
-    }
-
-    nav li {
-        margin: 0;
-        text-align: center;
-        width: 100%;
-    }
-
-    nav a {
-        padding: 20px;
-        border-radius: 0;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-        font-size: 1.2rem;
-        width: 100%;
-        display: block;
-        box-sizing: border-box;
-        color: white !important;
-    }
-
-    .section-grid {
-        grid-template-columns: 1fr !important;
-        gap: 20px;
-    }
-
-    .section-with-image {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-}
-
-/* Main Content */
-main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 50px 20px;
-}
-
-section {
-    background: var(--section-bg);
-    margin: 30px 0;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-}
-
-section:hover {
-    transform: translateY(-5px);
-}
-
-h2 {
-    color: var(--primary-blue);
-    margin-bottom: 20px;
-    border-left: 5px solid var(--accent-gold);
-    padding-left: 15px;
-}
-
-p, li {
-    color: var(--text-dark);
-    line-height: 1.8;
-}
-
-/* Section Images */
-section img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-.section-image-container {
-    width: 100%;
-    margin-bottom: 30px;
-    border-radius: 15px;
-    overflow: hidden;
-}
-
-.section-image-container img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    object-position: center;
-    transition: transform 0.3s ease;
-}
-
-.section-image-container img:hover {
-    transform: scale(1.05);
-}
-
-.section-with-image {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: center;
-}
-
-.section-content {
-    padding: 20px 0;
-}
-
-/* Footer */
-footer {
-    background: var(--primary-blue);
-    color: var(--text-light);
-    text-align: center;
-    padding: 40px 20px;
-}
-
-footer a {
-    color: var(--accent-gold);
-    text-decoration: none;
-}
-
-/* Section Grid */
-.section-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    margin-top: 30px;
-}
-
-.section-item, .content {
-    background: #f8f9fa;
-    padding: 30px;
-    border-radius: 10px;
-    border-left: 4px solid var(--accent-gold);
-    transition: all 0.3s ease;
-}
-
-.section-item:hover, .content:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(255,215,0,0.2);
-}
-
-/* SIMPLE BACKGROUND CLASSES */
-.bg-container {
-    position: relative;
-    overflow: hidden;
-}
-
-.bg-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
-
-.bg-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(44, 62, 80, 0.6);
-    z-index: 2;
-}
-
-.bg-content {
-    position: relative;
-    z-index: 3;
-    color: white;
-    padding: 60px 40px;
-}
-
-.bg-height-medium {
-    height: 500px;
-}
-
-.bg-height-large {
-    height: 70vh;
-    min-height: 600px;
-}
-
-/* For sections with background images */
-.section-with-bg {
-    position: relative;
-    margin: 30px 0;
-    padding: 0;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-}
-
-.section-with-bg .section-content {
-    position: relative;
-    z-index: 3;
-    padding: 60px 40px;
-    color: white;
-}
-
-.section-with-bg h2 {
-    color: white;
-    border-left: 5px solid var(--accent-gold);
-}
-
-.image-with-text {
-  position: relative;
-  display: inline-block; /* or block to fill width */
-  width: 100%;           /* adjust as needed */
-  border-radius: 15px;
-  overflow: hidden;
-}
-
-.image-with-text img {
-  display: block;
-  width: 100%;
-  height: auto;          /* adjust height if needed */
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.image-with-text img:hover {
-  transform: scale(1.05); /* optional hover zoom */
-}
-
-/* Text overlay */
-.image-with-text .overlay-text {
-  position: absolute;
-  top: 50%; 
-  left: 50%;
-  transform: translate(-50%, -50%); /* center text */
-  color: white;
-  text-align: center;
-  padding: 20px;
-  z-index: 2;
-}
-
-/* Optional: dark overlay between image and text for readability */
-.image-with-text::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.4); /* adjust opacity */
-  z-index: 1;
-}
+        document.addEventListener('click', function(event) {
+            if (navMenu.classList.contains('active') &&
+                !navMenu.contains(event.target) &&
+                !menuToggle.contains(event.target)) {
+                navMenu.classList.remove('active');
+                body.classList.remove('menu-open');
+                menuToggle.classList.remove('active');
+                menuToggle.setAttribute('aria-label', 'Open menu');
+            }
+        });
+    </script>
+</body>
+</html>
