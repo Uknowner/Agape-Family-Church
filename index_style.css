@@ -1,10 +1,40 @@
-/* Base Colors */
+/* Base Colors (already defined) */
 :root {
     --primary-blue: #2c3e50;
     --accent-gold: #ffd700;
+    --text-dark: #2c3e50;   /* text on light backgrounds */
+    --text-light: #fff;     /* text on dark backgrounds */
+    --section-bg: #ffffff;  /* light section background */
+}
+
+/* follow-color-scheme class */
+.follow-color-scheme {
+    /* Default: light mode */
     --text-dark: #2c3e50;
     --text-light: #fff;
     --section-bg: #ffffff;
+}
+
+/* Dark mode: follow user's system preference */
+@media (prefers-color-scheme: dark) {
+    .follow-color-scheme {
+        --text-dark: #f0f0f0;    /* light text on dark backgrounds */
+        --text-light: #1a1a1a;   /* dark text on light overlays */
+        --section-bg: #1a1a1a;   /* dark section background */
+    }
+}
+
+/* Example usage in elements */
+.follow-color-scheme body,
+.follow-color-scheme p,
+.follow-color-scheme li,
+.follow-color-scheme section {
+    color: var(--text-dark);
+    background-color: var(--section-bg);
+}
+
+.follow-color-scheme a {
+    color: var(--primary-blue);
 }
 
 /* Header */
